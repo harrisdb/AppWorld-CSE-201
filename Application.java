@@ -17,9 +17,11 @@ public class Application {
 	 */
 	private String developerName;
 	
+	private int votes;
 	/**
 	 * the list of the comment in this application
 	 */
+	
 	private ArrayList<Comment> commentList;
 	
 	/**
@@ -28,10 +30,11 @@ public class Application {
 	 * @param developer
 	 * @param Link
 	 */
-	public Application(String name,String developer,String Link) {
+	public Application(String name,String developer,String Link, int votes) {
 		this.name = name;
 		this.link =Link;
 		this.developerName=developer;
+		this.votes = votes;
 		commentList = new ArrayList<Comment>();
 	}
 	
@@ -77,7 +80,16 @@ public class Application {
 		return false;
 	}
 	
+	public void addVote() {
+		votes++;
+	}
 	
+	public int getVotes() {
+		return votes;
+	}
 	
+	public void deleteVote() {
+		votes--;
+	}
 	
 }
