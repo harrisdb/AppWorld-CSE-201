@@ -15,6 +15,7 @@ public void addComment(){
 }
 public void information(){
 	Application app1 = new Application("Fitness","Jack","www.lol.com");
+	Application app2 = new Application("Sleep", "Bill", "www.sleep.com");
 }
 public void deleteComment(){
 	
