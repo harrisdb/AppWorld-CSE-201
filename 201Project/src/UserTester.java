@@ -14,7 +14,7 @@ public void ConstructorTester(){
 	User jack = new User("jack","haha","lel123");
 }
 @Test
-public void votePerson(){
+public void vote(){
 	Person p1 = new Person("mike","lldy","45056");
 	User zack = new User("zack","user123","666");
 	int originalVoteNum = p1.getVotedNumber();

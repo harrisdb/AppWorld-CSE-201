@@ -12,6 +12,7 @@ public class Application {
 	 */
 	private String link;
 	
+	private String category;
 	/**
 	 * the name of the developer of the App.
 	 */
@@ -90,6 +91,11 @@ public class Application {
 	
 	public void deleteVote() {
 		votes--;
+	}
+
+	public String getCategory() {
+		// TODO Auto-generated method stub
+		return this.category;
 	}
 	
 }

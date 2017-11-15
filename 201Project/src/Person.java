@@ -7,14 +7,14 @@ public class Person {
     private String username;
     private String password;
     private int voteNumber;
-    private ArrayList<Category> favoriteCategories = new ArrayList<Category>();
+    private ArrayList<String> favoriteCategories = new ArrayList<String>();
     private ArrayList<Application> favoriteApplications = new ArrayList<Application>();
 
     public Person(String pName, String pUsername, String pPassword) {
         name = pName;
         username = pUsername;
         password = pPassword;
-        favoriteCategories = new ArrayList<Category>();
+        favoriteCategories = new ArrayList<String>();
         favoriteApplications = new ArrayList<Application>();
         voteNumber=0;
     }
@@ -58,7 +58,7 @@ public class Person {
     	favoriteApplications.add(app);
     }
 
-    public ArrayList<Category> getFavorites(){
+    public ArrayList<String> getFavorites(){
         return favoriteCategories;
     }
 

@@ -24,7 +24,7 @@ public class AppContainer {
     public ArrayList<Application> searchByCategory(String category) {
     	 ArrayList<Application> thisCategory = new ArrayList<Application>();
     	 for(Application a :allApplications) {
-    		 if(a.getCatogory().equals(category)) {
+    		 if(a.getCategory().equals(category)) {
     			 thisCategory.add(a);
     		 }
     	 }
@@ -87,8 +87,8 @@ public class AppContainer {
     	ObjectInputStream oi = null;
     	
     	try {
-    		fi = FileInputStream(new File("myObject.txt"));
-    		oi = ObjectInputStream(fi);
+    		fi = new FileInputStream(new File("myObject.txt"));
+    		oi = new ObjectInputStream(fi);
     		allApplications= (ArrayList<Application>) oi.readObject();
     	}
     	catch (FileNotFoundException e) {
