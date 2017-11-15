@@ -6,6 +6,7 @@ public class Person {
     private String name;
     private String username;
     private String password;
+    private int voteNumber;
     private ArrayList<Category> favoriteCategories = new ArrayList<Category>();
     private ArrayList<Application> favoriteApplications = new ArrayList<Application>();
 
@@ -15,6 +16,7 @@ public class Person {
         password = pPassword;
         favoriteCategories = new ArrayList<Category>();
         favoriteApplications = new ArrayList<Application>();
+        voteNumber=0;
     }
 
     public String getName() {
@@ -30,16 +32,18 @@ public class Person {
     }
 
     public Comment makeComment(String comment) {
-       Comment a = new Comment(comment);
+       Comment a = new Comment(comment,this);
        return a;
     }
 
     public void voteCommentUp(Comment comment) {
         comment.incrementVotes();
+        comment.getHolder().beVoted();
     }
 
     public void voteCommentDown(Comment comment) {
         comment.decrementVotes();
+        comment.getHolder().beDisvoted();
     }
 
     public void voteApp(Application app) {
@@ -59,6 +63,22 @@ public class Person {
     }
 
     public void submitApp(Person person, Application app) {
-        //TODO
+        
+    }
+    
+    public void beVoted() {
+    	voteNumber++;
+    }
+    
+    public void beDisvoted() {
+    	voteNumber--;
+    }
+    
+    public int getVotedNumber() {
+    	return voteNumber;
+    }
+    
+    public void setVotedNumber(int newOne) {
+    	voteNumber=newOne;
     }
 }

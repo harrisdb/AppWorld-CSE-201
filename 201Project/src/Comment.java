@@ -14,14 +14,18 @@ public class Comment {
      * can go negative.
      */
     private int votes;
+    
+    
+    private Person holder;
 
     /**
      * Method to instantiate a comment object
      * @param commentText text that is contained in comment
      */
-    public Comment(String commentText) {
+    public Comment(String commentText,Person people) {
         text = commentText;
         votes = 0;
+        holder = people;
     }
 
     /**
@@ -52,5 +56,9 @@ public class Comment {
      */
     public void decrementVotes() {
         votes--;
+    }
+    
+    public Person getHolder() {
+    	return holder;
     }
 }

@@ -1,5 +1,5 @@
 
-public class Moderator extends Person{
+public class Moderator extends User{
 
 	public Moderator(String pName, String pUsername, String pPassword) {
 		super(pName, pUsername, pPassword);
@@ -10,9 +10,11 @@ public class Moderator extends Person{
 		return true;
 	}
 
-	public Person revokeModStatus() {
-		User a = this;
+	public User revokeModStatus() {
+		User a = new User(this.getName(),this.getUsername(),this.getPassword());
+		a.setVotedNumber(this.getVotedNumber());
 		return a;
+		
 	}
 	
 	
