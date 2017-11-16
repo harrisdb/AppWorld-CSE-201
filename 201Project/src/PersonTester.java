@@ -16,11 +16,11 @@ public class PersonTester {
     }
 
     public void voteCommentUp() {
-        comment.incrementVotes();
+        //comment.incrementVotes();
     }
 
     public void voteCommentDown() {
-        comment.decrementVotes();
+       // comment.decrementVotes();
     }
 
     public void voteApp() {
@@ -31,8 +31,9 @@ public class PersonTester {
         //TODO
     }
 
-    public ArrayList<Category> getFavorites(){
+    public ArrayList<String> getFavorites(){
         //TODO
+    	return null;
     }
 
     public void submitApp() {
