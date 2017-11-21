@@ -33,9 +33,11 @@
           <p class="search" align="right">
             <a class="btn btn-primary btn-lg" href="#" role="button">Search</a>
           </p>
+          <g:form action="home">
             <p class="home" align="right">
-              <a class="btn btn-primary btn-lg" href="#" role="button">Home</a>
+              <button type="submit" class="btn btn-primary btn-lg">Home</button>
             </p>
+        </g:form>
       </div>
     </head>
 
@@ -47,12 +49,11 @@
       <div class="form-group">
         <label for="formGroupExampleInput2" name="password">Password:</label>
         <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Password">
+        <button type="submit" class="btn btn-primary">Login</button>
       </div>
     </g:form>
     <g:form action="signup" style="padding-left:200px">
-      <p class="search" align="right">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Login</a>
-      </p>
+      <button type="submit" class="btn btn-primary">New User?</button>
     </g:form>
 
     <!-- Required meta tags -->

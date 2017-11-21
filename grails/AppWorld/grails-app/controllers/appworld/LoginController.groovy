@@ -31,10 +31,6 @@ class LoginController {
     }
 
     def home() {
-        redirect(controller: Home, action: 'index')
-    }
-
-    def search() {
-        redirect(controller: Home, action: 'index')
+        render(view: '/index')
     }
 }
