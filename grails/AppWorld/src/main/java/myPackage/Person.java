@@ -25,4 +25,16 @@ public class Person implements Serializable {
     public String getUsername() {
         return username;
     }
+
+    public void changeName(String nName) {
+        name = nName;
+    }
+
+    public void changeUsername(String nUsername) {
+        username = nUsername;
+    }
+
+    public void changePassword(String nPassword) {
+        password = nPassword;
+    }
 }

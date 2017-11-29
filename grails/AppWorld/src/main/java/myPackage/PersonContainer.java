@@ -17,6 +17,8 @@ public class PersonContainer {
          */
         private ArrayList<Person> allPersons = new ArrayList<Person>();
 
+        private Person guest = new Person("guest", "guest", "guest");
+
         /**
          * Instantiate an empty PersonContainer
          */
@@ -25,6 +27,9 @@ public class PersonContainer {
             boolean exists = tmpDir.exists();
             if(exists) {
                 Load();
+            }
+            else {
+                signUp("guest", "guest", "guest");
             }
         }
 
@@ -47,32 +52,44 @@ public class PersonContainer {
          * @param password password associated with account
          * @return the user if login is successful, null if not successful
          */
-        public Person login(String username, String password) {
-
-            Person checkPerson;
-
-            for (int i = 0; i < allPersons.size(); i++) {
-                checkPerson = allPersons.get(i);
-                if (checkPerson.getUsername().equals(username) && checkPerson.getPassword().equals(password)) {
-                    return checkPerson;
-                }
-            }
-
-            return null;
-
-        }
 
         public boolean doesLoginWork(String username, String password) {
             Person checkPerson;
 
+            System.out.println(allPersons.size());
+
+            if(allPersons.size() == 0) {
+                return false;
+            }
+
             for (int i = 0; i < allPersons.size(); i++) {
                 checkPerson = allPersons.get(i);
                 if (checkPerson.getUsername().equals(username) && checkPerson.getPassword().equals(password)) {
+                    allPersons.set(0, allPersons.get(i));
                     return true;
                 }
             }
 
             return false;
+        }
+
+        public int personsSize() {
+            return allPersons.size();
+        }
+
+        public boolean loggedIn() {
+            if (allPersons.get(0).getUsername().equalsIgnoreCase("guest")) {
+                return true;
+            }
+            return false;
+        }
+
+        public String loggedInUsername() {
+            return allPersons.get(0).getUsername();
+        }
+
+        public void logout() {
+            allPersons.set(0, guest);
         }
 
         public void Save() {

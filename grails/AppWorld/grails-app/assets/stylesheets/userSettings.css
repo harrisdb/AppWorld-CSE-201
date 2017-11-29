@@ -1,0 +1,9 @@
+#mainJumbo {
+  background-image: url("https://timedotcom.files.wordpress.com/2016/01/time-100-2016-usain-bolt.jpg?quality=85");
+  background-size: cover;
+}
+
+#mainNav {
+  position: relative;
+  bottom: 32px;
+}

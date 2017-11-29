@@ -1,47 +1,65 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>AppWorld</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <style>
-    h1.display-3 {
-      right: 70px;
-      bottom: 50px;
-      position: relative;
-    }
-    p.lead {
-      right:15px;
-      bottom: 50px;
-      position: relative;
-    }
-    form.form-inline {
-      position: relative;
-      left:720px;
-      top: 50px;
-    }
-    </style>
-  </head>
-  <head>
-    <div class="jumbotron jumbotron-fluid" style="background-image: url(https://timedotcom.files.wordpress.com/2016/01/time-100-2016-usain-bolt.jpg?quality=85); background-size: 100%;">
-      <h1 class="display-3" align="right"><font color="white">App World</font></h1>
-      <p class="lead" align="right"><font color="white">Voted #1 Fitness App Catalog in the Universe!</font></p>
-    </div>
-
-
-
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <title>AppWorld</title>
+    <asset:stylesheet src="home.css"/>
+
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   </head>
   <body>
+    <div class="jumbotron jumbotron-fluid" id="mainJumbo">
+      <h1 class="display-3" align="right"><font color="white">App World</font></h1>
+      <p class="lead" align="right"><font color="white">Voted #1 Fitness App Catalog in the Universe!</font></p>
+    </div>
 
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" id="loginButton" data-toggle="modal" data-target="#myModal">
-      Login!
-    </button>
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse" id="mainNav">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">AppWorld</a>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+        <g:if test="${username == 'guest' || username == null}">
+          <form class="form-inline">
+            <button type="button" class="btn btn-outline-info my-2 my-sm-0" id="loginButton" data-toggle="modal" data-target="#myModal">
+              Login!
+            </button>
+          </form>
+        </g:if>
+        <g:else>
+          <g:form controller="Home" action="logout">
+            <form class="form-inline">
+              <span class="navbar-text">
+                Logged in as ${username}
+              </span>
+              <button type="submit" class="btn btn-outline-danger my-2 my-sm-0" id="loginButton">
+                Logout
+              </button>
+            </form>
+          </g:form>
+        </g:else>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
 
     <!-- Modal 1 (Login) -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -83,10 +101,10 @@
             </button>
           </div>
           <div class="modal-body">
-            <g:form controller="home" action="login">
+            <g:form controller="Home" action="signUp">
               <div class="form-group">
                 <label for="exampleInputEmail1">Full Name</label>
-                <input type="text" class="form-control" id="signupFormName" placeholder="Full Name" name="sUsername">
+                <input type="text" class="form-control" id="signupFormName" placeholder="Full Name" name="sName">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Username</label>
@@ -101,14 +119,65 @@
                 <label for="exampleInputEmail1">Repeat Password</label>
                 <input type="password" class="form-control" id="signupFormRepeatPassword" placeholder="Repeat Password" name="sPassword2">
               </div>
+              <hr class="my-4">
+              <button type="submit" class="btn btn-success">Signup!</button>
             </g:form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-success">Signup!</button>
           </div>
         </div>
       </div>
     </div>
+
+    <h1 class="display-4" align="right" id="adminpickText"><font color="4d4e4f">Top Picks!</font></h2>
+
+    <div class="card" style="width: 20rem;" id="adminPick1">
+      <div class="card-block">
+        <h4 class="card-title">Card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+
+    <div class="card" style="width: 20rem;" id="adminPick2">
+      <div class="card-block">
+        <h4 class="card-title">Card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+
+    <div class="card" style="width: 20rem;" id="adminPick3">
+      <div class="card-block">
+        <h4 class="card-title">Card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+
+    <div class="card" style="width: 20rem;" id="adminPick4">
+      <div class="card-block">
+        <h4 class="card-title">Card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+
+    <div class="card" style="width: 20rem;" id="adminPick5">
+      <div class="card-block">
+        <h4 class="card-title">Card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+
+    <div class="card" style="width: 20rem;" id="adminPick6">
+      <div class="card-block">
+        <h4 class="card-title">Card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+
+    <h1 class="display-4" align="right" id="recommendedForUser"><font color="4d4e4f">Recommended for you!</font></h2>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

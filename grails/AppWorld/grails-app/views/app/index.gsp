@@ -1,30 +1,8 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <div class="jumbotron jumbotron-fluid" style="background-image: url(https://timedotcom.files.wordpress.com/2016/01/time-100-2016-usain-bolt.jpg?quality=85); background-size: 100%;">
-      <h1 class="display-3" align="right"><font color="white">App World</font></h1>
-      <p class="lead" align="right"><font color="white">Voted #1 Fitness App Catalog in the Universe!</font></p>
-      <p align="center">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Login</a>
-      </p>
-    </div>
-    <h1 align="center">{Application Image}</h1>
-    <h1 align="center">{Application Name}</h1>
-    <h5 align="center">{Application Votes}</h3>
-    <h5 align="center">Developed by {App Developer}</h3>
-    <p align="center">App description. abcdefghijklmnoqrstuvwxyzabcdefghijklmnoqrstuvwxyz
-      abcdefghijklmnoqrstuvwxyz
-      abcdefghijklmnoqrstuvwxyz
-      abcdefghijklmnoqrstuvwxyz
-      abcdefghijklmnoqrstuvwxyz
-      abcdefghijklmnoqrstuvwxyz
-      abcdefghijklmnoqrstuvwxyz
-      abcdefghijklmnoqrstuvwxyz
-      abcdefghijklmnoqrstuvwxyz
-      abcdefghijklmnoqrstuvwxyz
-    </p>
-    <hr class="my-4">
-    <p align="center">List of comments down here</p>
+
+
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -34,7 +12,28 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
   <body>
-    <div
+    <div class="jumbotron jumbotron-fluid" style="background-image: url(https://timedotcom.files.wordpress.com/2016/01/time-100-2016-usain-bolt.jpg?quality=85); background-size: 100%;">
+      <h1 class="display-3" align="right"><font color="white">App World</font></h1>
+      <p class="lead" align="right"><font color="white">Voted #1 Fitness App Catalog in the Universe!</font></p>
+    </div>
+    <h1 align="center">{Application Image}</h1>
+    <h1 align="center">Twitter</h1>
+    <h5 align="center">Recommended by 0 users</h3>
+    <h5 align="center">Developed by Twitter Inc.</h3>
+    <p align="center">
+    </p>
+    <hr class="my-4">
+    <h5 align="left">harrisdb</h1>
+    <h5 align="left">0 votes</h5>
+    <h4>twitter is great app</h4>
+    <hr class="my-4">
+    <h5 align="left">johndoe123</h1>
+    <h5 align="left">0 votes</h5>
+    <h4>I love twitter</h4>
+    <hr class="my-4">
+    <h5 align="left">janedoe456</h1>
+    <h5 align="left">0 votes</h5>
+    <h4>app is buggy, i hope the developer fixes it</h4>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

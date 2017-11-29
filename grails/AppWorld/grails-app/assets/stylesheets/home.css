@@ -1,0 +1,60 @@
+#mainJumbo {
+  background-image: url("https://timedotcom.files.wordpress.com/2016/01/time-100-2016-usain-bolt.jpg?quality=85");
+  background-size: cover;
+}
+#mainNav {
+  position: relative;
+  bottom: 32px;
+}
+#loginButton {
+  position: relative;
+  right: 1150px;
+}
+
+#adminPick1 {
+  position: absolute;
+  top: 400px;
+  left: 100px;
+}
+
+#adminPick2 {
+  position: absolute;
+  top: 400px;
+  left: 500px;
+}
+
+#adminPick3 {
+  position: absolute;
+  top: 400px;
+  left: 900px;
+}
+
+#adminPick4 {
+  position: absolute;
+  left: 100px;
+  top: 650px;
+}
+
+#adminPick5 {
+  position: absolute;
+  top: 650px;
+  left: 500px;
+}
+
+#adminPick6 {
+  position: absolute;
+  top: 650px;
+  left: 900px;
+}
+
+#adminpickText {
+  position: absolute;
+  top: 320px;
+  left: 100px;
+}
+
+#recommendedForUser {
+  position: absolute;
+  left: 100px;
+  top: 875px;
+}
