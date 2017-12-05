@@ -16,15 +16,11 @@
   position: relative;
   bottom: 32px;
 }
-
-#FavContainer {
-  display: block;
+#byVotesButton {
+  position: relative;
+  left: 10px;
 }
-
-#NameContainer {
-  display: none;
-}
-
-#PassContainer {
-  display: none;
+#byCategoryButton {
+  position: relative;
+  left: 20px;
 }

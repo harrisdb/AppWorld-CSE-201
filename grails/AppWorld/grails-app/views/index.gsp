@@ -15,10 +15,8 @@
 
 <body>
   <div class="jumbotron jumbotron-fluid" id="mainJumbo">
-    <h1 class="display-3" align="right"><font color="white">App World</font></h1>
-    <p class="lead" align="right">
-      <font color="white">Voted #1 Fitness App Catalog in the Universe!</font>
-    </p>
+    <h1 class="display-3" align="right" id="jumboApp"><font color="white">App World</font></h1>
+    <p class="lead" align="right" id="jumboVoted"><font color="white">Voted #1 Fitness App Catalog in the Universe!</font></p>
   </div>
 
   <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse" id="mainNav">
@@ -136,53 +134,53 @@
 
     <div class="card" style="width: 20rem;" id="adminPick1">
       <div class="card-block">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <h4 class="card-title">Nike Running Club</h4>
+        <p class="card-text">Any runner needs this! Comes with 1000+ different running plans to get you started!</p>
         <a href="http://localhost:8080/app" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
 
     <div class="card" style="width: 20rem;" id="adminPick2">
       <div class="card-block">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <h4 class="card-title">MyFitnessPal</h4>
+        <p class="card-text">Very helpful application to track calories and other intakes! Must need if you're looking for better nutrition!</p>
         <a href="http://localhost:8080/app" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
 
     <div class="card" style="width: 20rem;" id="adminPick3">
       <div class="card-block">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <h4 class="card-title">iBike</h4>
+        <p class="card-text">Anyone that loves to go biking will love this! Has many different trails to explore</p>
         <a href="http://localhost:8080/app" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
 
     <div class="card" style="width: 20rem;" id="adminPick4">
       <div class="card-block">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <h4 class="card-title">iYoga</h4>
+        <p class="card-text">If you are into Yoga check this Application out! 1500+ different yoga poses.</p>
         <a href="http://localhost:8080/app" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
 
     <div class="card" style="width: 20rem;" id="adminPick5">
       <div class="card-block">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <h4 class="card-title">SleepTrkr</h4>
+        <p class="card-text">It's important you get 8 hours of sleep a day, make sure you are with SleepTrkr!</p>
         <a href="http://localhost:8080/app" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
 
     <div class="card" style="width: 20rem;" id="adminPick6">
       <div class="card-block">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <h4 class="card-title">GymBuddy</h4>
+        <p class="card-text">Looking to start building muscle or already doing so? GymBuddy comes with 2000+ different gym workouts!</p>
         <a href="http://localhost:8080/app" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
 
-    <h1 class="display-4" align="right" id="recommendedForUser"><font color="4d4e4f">Recommended for you!</font></h2>
+    <!-- <h1 class="display-4" align="right" id="recommendedForUser"><font color="4d4e4f">Recommended for you!</font></h2> -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

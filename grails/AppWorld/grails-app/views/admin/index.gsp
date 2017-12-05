@@ -73,22 +73,22 @@
         <tr>
           <td>Twitter</td>
           <td>John Doe</td>
-          <td>App Votes</td>
-          <td>www.sampleLink.com</td>
+          <td>https://itunes.apple.com/us/app/twitter/id333903271?mt=8</td>
+          <td>2</td>
           <td> <button class="btn-danger" id="delete App">delete</button> </td>
         </tr>
         <tr>
           <td>Instagram</td>
           <td>Mary Moe</td>
-          <td>App Votes</td>
-          <td>www.sampleLink.com</td>
+          <td>https://itunes.apple.com/us/app/instagram/id389801252?mt=8</td>
+          <td>3</td>
           <td> <button class="btn-danger" id="delete App">delete</button> </td>
         </tr>
         <tr>
           <td>Snapchat</td>
           <td>Julie Dooley</td>
-          <td>App Votes</td>
-          <td>www.sampleLink.com</td>
+          <td>https://itunes.apple.com/us/app/snapchat/id447188370?mt=8</td>
+          <td>1</td>
           <td> <button class="btn-danger" id="delete App">delete</button> </td>
         </tr>
       </tbody>

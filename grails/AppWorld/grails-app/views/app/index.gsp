@@ -15,35 +15,29 @@
 </head>
 
 <body>
-  <div class="jumbotron jumbotron-fluid" style="background-image: url(https://timedotcom.files.wordpress.com/2016/01/time-100-2016-usain-bolt.jpg?quality=85); background-size: 100%;">
-    <h1 class="display-3" align="right"><font color="white">App World</font></h1>
-    <p class="lead" align="right">
-      <font color="white">Voted #1 Fitness App Catalog in the Universe!</font>
-    </p>
+  <div class="jumbotron jumbotron-fluid" id="mainJumbo">
+    <h1 class="display-3" align="right" id="jumboApp"><font color="white">App World</font></h1>
+    <p class="lead" align="right" id="jumboVoted"><font color="white">Voted #1 Fitness App Catalog in the Universe!</font></p>
   </div>
 
   <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse" id="mainNav">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-    <a class="navbar-brand" href="#">App</a>
+    <a class="navbar-brand" href="#">AppWorld</a>
+    <form class="form-inline my-2 my-lg-0">
+      <button type="button" class="btn btn-outline-info my-2 my-sm-0" id="loginButton" data-toggle="modal" data-target="#myModal">
+          Login!
+        </button>
+    </form>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="http://localhost:8080/">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-      </ul>
     </div>
   </nav>
 
-  <h1 align="center">{Application Image}</h1>
+  <img src="https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/67/92/2c/67922c5f-6ab7-5797-bd79-3c5db2e9bfe0/source/1200x630bb.jpg" width="300" height="300" id="image">
+  <img src="https://visualpharm.com/assets/313/Circled%20Up-595b40b85ba036ed117dc927.svg" width="40" height="40" id="image2">
+  <img src="https://visualpharm.com/assets/313/Circled%20Up-595b40b85ba036ed117dc927.svg" width="20" height="20" id="image3">
   <h1 align="center">Twitter</h1>
   <h5 align="center">Recommended by 0 users</h3>
     <h5 align="center">Developed by Twitter Inc.</h3>
@@ -53,14 +47,6 @@
     <h5 align="left">harrisdb</h1>
     <h5 align="left">0 votes</h5>
   <h4>twitter is great app</h4>
-  <hr class="my-4">
-  <h5 align="left">johndoe123</h1>
-    <h5 align="left">0 votes</h5>
-  <h4>I love twitter</h4>
-  <hr class="my-4">
-  <h5 align="left">janedoe456</h1>
-    <h5 align="left">0 votes</h5>
-  <h4>app is buggy, i hope the developer fixes it</h4>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

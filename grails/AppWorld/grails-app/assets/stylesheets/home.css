@@ -1,13 +1,21 @@
 #mainJumbo {
-  background-image: url("https://timedotcom.files.wordpress.com/2016/01/time-100-2016-usain-bolt.jpg?quality=85");
+  background-image: url("https://cdn-s3.si.com/images/karnazes-trail-running-mountain.jpg");
   background-size: cover;
 }
-
 #mainNav {
   position: relative;
   bottom: 32px;
 }
-
+#jumboApp {
+  position: relative;
+  top: 60px;
+  right: 150px;
+}
+#jumboVoted {
+  position: relative;
+  top: 60px;
+  right: 130px;
+}
 #appNav {
   position: relative;
   bottom: 32px;
@@ -63,4 +71,18 @@
   position: absolute;
   left: 100px;
   top: 875px;
+}
+#image {
+  position: relative;
+  left:810px;
+}
+#image2 {
+  position: relative;
+  left: 550px;
+  top: 175px;
+}
+#image3 {
+  position: relative;
+  right: 260px;
+  top: 314px;
 }

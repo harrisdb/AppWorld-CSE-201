@@ -39,4 +39,8 @@ class HomeController {
         flash.message = ("You are not signed in, you are viewing as a guest")
         redirect(controller: "app", action: "index")
     }
+
+    def isUserLoggedIn() {
+        render(view: '/index', model: [username:people.loggedInUsername()])
+    }
 }

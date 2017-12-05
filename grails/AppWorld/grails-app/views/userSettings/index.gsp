@@ -39,10 +39,8 @@
 
 <body>
   <div class="jumbotron jumbotron-fluid" id="mainJumbo">
-    <h1 class="display-3" align="right"><font color="white">AppWorld</font></h1>
-    <p class="lead" align="right">
-      <font color="white">Voted #1 Fitness App Catalog in the Universe!</font>
-    </p>
+    <h1 class="display-3" align="right" id="jumboApp"><font color="white">App World</font></h1>
+    <p class="lead" align="right" id="jumboVoted"><font color="white">Voted #1 Fitness App Catalog in the Universe!</font></p>
   </div>
 
   <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse" id="mainNav">
