@@ -11,6 +11,30 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+  <script>
+    function showhide(id) {
+
+      // Resets all tables to none; makes screen blank
+      document.getElementById('FavContainer').style.display = 'none';
+      document.getElementById('NameContainer').style.display = 'none';
+      document.getElementById('PassContainer').style.display = 'none';
+
+      var buttonID = document.getElementById(id);
+      var showContainer = null;
+
+      //Check which table needs to be displayed, displays the correpsonding table
+      if (buttonID == document.getElementById('Fav')) {
+        showContainer = document.getElementById('FavContainer');
+      } else if (buttonID == document.getElementById('Name')) {
+        showContainer = document.getElementById('NameContainer');
+      } else if (buttonID == document.getElementById('Pass')) {
+        showContainer = document.getElementById('PassContainer');
+      }
+      showContainer.style.display = 'block';
+    }
+  </script>
+
 </head>
 
 <body>
@@ -32,17 +56,20 @@
         <li class="nav-item active">
           <a class="nav-link" href="http://localhost:8080/">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+        <li id="Fav" class="nav-item">
+          <a class="nav-link" href="javascript: showhide('Fav');"> <i>Favorite Categories</i> </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
+        <li id="Name" class="nav-item">
+          <a class="nav-link" href="javascript: showhide('Name');"> <i>Change Name</i> </a>
+        </li>
+        <li id="Pass" class="nav-item">
+          <a class="nav-link" href="javascript: showhide('Pass');"> <i>Change Password</i> </a>
         </li>
       </ul>
     </div>
   </nav>
 
-  <div class="container">
+  <div class="container" id="FavContainer">
     <form class="form-vertical">
       <h3>Select Favorite Categories</h3>
       <ul>
@@ -76,9 +103,9 @@
       </div>
       <div class="col-xs-12" style="height:30px;"></div>
     </form>
-
   </div>
-  <div class="container">
+
+  <div class="container" id="NameContainer">
     <h3>Change Name</h3>
     <form class="form-horizontal">
       <div class="form-group">
@@ -92,32 +119,34 @@
           <button type="submit" class="btn btn-success">Save</button>
         </div>
         <div class="col-xs-12" style="height:30px;"></div>
+      </div>
+  </div>
 
+  <div class="container" id="PassContainer">
+    <h3>Change Password</h3>
+    <div class="form-group">
+      <label class="control-label col-sm-2"></label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" id="pwd" placeholder="Enter current password" name="pwd">
       </div>
-      <h3>Change Password</h3>
-      <div class="form-group">
-        <label class="control-label col-sm-2"></label>
-        <div class="col-sm-10">
-          <input type="password" class="form-control" id="pwd" placeholder="Enter current password" name="pwd">
-        </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd"></label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" id="pwd" placeholder="Enter new password" name="pwd">
       </div>
-      <div class="form-group">
-        <label class="control-label col-sm-2" for="pwd"></label>
-        <div class="col-sm-10">
-          <input type="password" class="form-control" id="pwd" placeholder="Enter new password" name="pwd">
-        </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd"></label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" id="pwd" placeholder="Re enter new password" name="pwd">
       </div>
-      <div class="form-group">
-        <label class="control-label col-sm-2" for="pwd"></label>
-        <div class="col-sm-10">
-          <input type="password" class="form-control" id="pwd" placeholder="Re enter new password" name="pwd">
-        </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-success">Save</button>
       </div>
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" class="btn btn-success">Save</button>
-        </div>
-      </div>
+    </div>
     </form>
   </div>
 

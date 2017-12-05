@@ -7,3 +7,15 @@
   position: relative;
   bottom: 32px;
 }
+
+#FavContainer {
+  display: block;
+}
+
+#NameContainer {
+  display: none;
+}
+
+#PassContainer {
+  display: none;
+}
