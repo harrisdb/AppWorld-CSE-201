@@ -2,13 +2,12 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>Bootstrap Example</title>
+  <title>app</title>
+  <asset:stylesheet src="home.css" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
 
   <script>
@@ -37,21 +36,27 @@
 </head>
 
 <body>
-  <div class="navbar">
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">Admin</a>
-        </div>
-        <ul class="nav navbar-nav">
-          <li><a href="http://localhost:8080/">Home</a></li>
-          <li id="Apps"><a href="javascript: showhide('Apps');">Apps</a></li>
-          <li id="Users"><a href="javascript: showhide('Users');">Users</a></li>
-          <li id="Submissions"><a href="javascript: showhide('Submissions');">User Submissions</a></li>
-        </ul>
-      </div>
-    </nav>
+  <div class="jumbotron jumbotron-fluid" id="mainJumbo">
+    <h1 class="display-3" align="right"><font color="white">App World</font></h1>
+    <p class="lead" align="right">
+      <font color="white">Voted #1 Fitness App Catalog in the Universe!</font>
+    </p>
   </div>
+
+  <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse" id="mainNav">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <a class="navbar-brand" href="#">Admin</a>
+    </div>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><a class="nav-link" href="http://localhost:8080/">Home</a></li>
+      <li class="nav-item" id="Apps"><a class="nav-link" href="javascript: showhide('Apps');"> <i>Apps</i> </a></li>
+      <li class="nav-item" id="Users"><a class="nav-link" href="javascript: showhide('Users');"> <i>Users</i> </a></li>
+      <li class="nav-item" id="Submissions"><a class="nav-link" href="javascript: showhide('Submissions');"> <i>User Submissions</i> </a></li>
+    </ul>
+    </div>
+  </nav>
 
   <div class="container" id="Apps Table">
     <table class="table table-hover table-striped">

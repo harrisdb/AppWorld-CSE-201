@@ -8,6 +8,11 @@
   bottom: 32px;
 }
 
+#appNav {
+  position: relative;
+  bottom: 32px;
+}
+
 #loginButton {
   position: relative;
 }

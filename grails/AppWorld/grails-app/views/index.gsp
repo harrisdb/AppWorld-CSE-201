@@ -38,6 +38,9 @@
         <li class="nav-item">
           <a class="nav-link" href="http://localhost:8080/UserSettings">User Settings</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:8080/Admin">Admin</a>
+        </li>
       </ul>
 
       <g:if test="${username == 'guest' || username == null}">
@@ -135,7 +138,7 @@
       <div class="card-block">
         <h4 class="card-title">Card title</h4>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="http://localhost:8080/app" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
 
@@ -143,7 +146,7 @@
       <div class="card-block">
         <h4 class="card-title">Card title</h4>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="http://localhost:8080/app" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
 
@@ -151,7 +154,7 @@
       <div class="card-block">
         <h4 class="card-title">Card title</h4>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="http://localhost:8080/app" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
 
@@ -159,7 +162,7 @@
       <div class="card-block">
         <h4 class="card-title">Card title</h4>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="http://localhost:8080/app" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
 
@@ -167,7 +170,7 @@
       <div class="card-block">
         <h4 class="card-title">Card title</h4>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="http://localhost:8080/app" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
 
@@ -175,7 +178,7 @@
       <div class="card-block">
         <h4 class="card-title">Card title</h4>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="http://localhost:8080/app" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
 
