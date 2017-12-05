@@ -154,7 +154,7 @@
             <p>This is a sample description of the app</p>
           </td>
           <td>DoeJ97</td>
-          <td> <button class="btn-success">Yes</button> <button class="btn-danger">No</button></td>
+          <td style='white-space:nowrap'> <button class="btn-success">Yes</button> <button class="btn-danger">No</button></td>
         </tr>
         <tr>
           <td>Instagram</td>
@@ -164,7 +164,7 @@
             <p>...</p>
           </td>
           <td>MoeM88</td>
-          <td> <button class="btn-success">Yes</button> <button class="btn-danger">No</button></td>
+          <td style='white-space:nowrap'> <button class="btn-success">Yes</button> <button class="btn-danger">No</button></td>
         </tr>
         <tr>
           <td>Viber</td>
@@ -172,7 +172,7 @@
             <p>This is yet another sample description of the app</p>
           </td>
           <td>Jeff1000</td>
-          <td> <button class="btn-success">Yes</button> <button class="btn-danger">No</button></td>
+          <td style='white-space:nowrap'> <button class="btn-success">Yes</button> <button class="btn-danger">No</button></td>
         </tr>
       </tbody>
     </table>
