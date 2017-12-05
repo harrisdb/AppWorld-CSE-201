@@ -37,4 +37,8 @@ public class Person implements Serializable {
     public void changePassword(String nPassword) {
         password = nPassword;
     }
+
+    private String getRole() {
+        return this.getClass.getSimpleName();
+    }
 }

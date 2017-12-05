@@ -25,15 +25,100 @@
         <span class="navbar-toggler-icon"></span>
       </button>
     <a class="navbar-brand" href="#">AppWorld</a>
-    <form class="form-inline my-2 my-lg-0">
-      <button type="button" class="btn btn-outline-info my-2 my-sm-0" id="loginButton" data-toggle="modal" data-target="#myModal">
-          Login!
-        </button>
-    </form>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="http://localhost:8080/">Home</a>
+      </li>
+    </ul>
+    <g:if test="${username == 'guest' || username == null}">
+      <form class="form-inline my-2 my-lg-0">
+        <button type="button" class="btn btn-outline-info my-2 my-sm-0" id="loginButton" data-toggle="modal" data-target="#myModal">
+            Login!
+          </button>
+      </form>
+    </g:if>
+    <g:else>
+      <g:form controller="Home" action="logout">
+        <form class="form-inline">
+          <span class="navbar-text">
+              Logged in as ${username}
+            </span>
+          <button type="submit" class="btn btn-outline-danger my-2 my-sm-0" id="loginButton">
+              Logout
+            </button>
+        </form>
+      </g:form>
+    </g:else>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
     </div>
   </nav>
+
+  <!-- Modal 1 (Login) -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login to AppWorld!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+        </div>
+        <div class="modal-body">
+          <g:form controller="Home" action="login">
+            <div class="form-group">
+              <label for "loginModalFormUsername">Username</label>
+              <input type="text" class="form-control" id="loginModalFormUsername" placeholder="Username" name="username">
+            </div>
+            <div class="form-group">
+              <label for "loginModalFormPassword">Password</label>
+              <input type="password" class="form-control" id="loginModalFormPassword" placeholder="Password" name="password">
+              <hr class="my-4">
+              <button type="submit" class="btn btn-success">Login</button>
+            </div>
+          </g:form>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="modal" data-target="#signUpModal">New User?</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 (Signup) -->
+  <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Signup for AppWorld</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+          <g:form controller="Home" action="signUp">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Full Name</label>
+              <input type="text" class="form-control" id="signupFormName" placeholder="Full Name" name="sName">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Username</label>
+              <input type="text" class="form-control" id="signupFormUsername" placeholder="Username" name="sUsername">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Password</label>
+              <input type="password" class="form-control" id="signupFormPassword" aria-describedby="passwordHelp" placeholder="Password" name="sPassword">
+              <small id=passwordHelp class="form-text text-muted">Minimum 8 characters, must contain at least 1 number</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Repeat Password</label>
+              <input type="password" class="form-control" id="signupFormRepeatPassword" placeholder="Repeat Password" name="sPassword2">
+            </div>
+            <hr class="my-4">
+            <button type="submit" class="btn btn-success">Signup!</button>
+          </g:form>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <img src="https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/67/92/2c/67922c5f-6ab7-5797-bd79-3c5db2e9bfe0/source/1200x630bb.jpg" width="300" height="300" id="image">
   <img src="https://visualpharm.com/assets/313/Circled%20Up-595b40b85ba036ed117dc927.svg" width="40" height="40" id="image2">
