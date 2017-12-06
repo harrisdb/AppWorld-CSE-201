@@ -146,12 +146,6 @@
             <td>${it.getVotes()}</td>
           </tr>
         </g:each>
-        <td>Snapchat</td>
-        <td>Julie Dooley</td>
-        <td>https://itunes.apple.com/us/app/snapchat/id447188370?mt=8</td>
-        <td>1</td>
-        <td> <button class="btn-info" id="View App">View App</button> </td>
-        </tr>
       </tbody>
     </table>
   </div>

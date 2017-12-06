@@ -12,16 +12,13 @@
 
   <script>
     function showhide(id) {
-
       // Resets all tables to none; makes screen blank
       document.getElementById('Apps Table').style.display = 'none';
       document.getElementById('Users Table').style.display = 'none';
       document.getElementById('User Submissions Table').style.display = 'none';
       document.getElementById('Moderator Requests Table').style.display = 'none';
-
       var buttonID = document.getElementById(id);
       var tableID = null;
-
       //Check which table needs to be displayed, displays the correpsonding table
       if (buttonID == document.getElementById('Apps')) {
         tableID = document.getElementById('Apps Table');
@@ -167,7 +164,6 @@
     </table>
   </div>
 
-  s
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
