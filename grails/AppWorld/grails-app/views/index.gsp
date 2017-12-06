@@ -160,12 +160,12 @@
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Application Link</label>
-              <input type="password" class="form-control" id="signupFormPassword" aria-describedby="passwordHelp" placeholder="" name="appLink">
+              <input type="text" class="form-control" id="signupFormPassword" aria-describedby="passwordHelp" placeholder="" name="appLink">
               <small id=passwordHelp class="form-text text-muted">Minimum 8 characters, must contain at least 1 number</small>
             </div>
             <div class="form-group">
               <label for="comment">Description:</label>
-              <textarea class="form-control" rows="5" id="comment" name="appDesc"></textarea>
+              <textarea class="form-control" type="text" rows="5" id="comment" name="appDesc"></textarea>
             </div>
             <div class="radio">
               <label><input type="radio" name="catRadio">Athletics</label>

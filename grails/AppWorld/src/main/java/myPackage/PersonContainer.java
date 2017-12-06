@@ -36,7 +36,11 @@ public class PersonContainer {
             }
         }
 
-        /**
+    public ArrayList<Person> getAllPersons() {
+        return allPersons;
+    }
+
+    /**
          * Method to create a new user, called when a new person wants to sign up
          * @param name first and last name of the person
          * @param username screen name for person

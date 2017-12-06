@@ -8,6 +8,7 @@ class UrlMappings {
                 // apply constraints here
             }
         }
+        "/Admin"(controller:"admin", action:"fillTables")
         "/app"(controller:"app", action:"test")
         "/"(controller:"home", action:"isUserLoggedIn")
         "500"(view:'/error')

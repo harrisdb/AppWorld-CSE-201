@@ -1,6 +1,7 @@
 package myPackage;
+import java.io.Serializable;
 import java.util.*;
-public class Application {
+public class Application implements Serializable{
 	
 	/**
 	 * the string contain the name of the app name.
@@ -33,12 +34,12 @@ public class Application {
 	 * @param Developer
 	 * @param Link
 	 */
-	public Application(String Name,String Developer,String Link,String Description, String Category, int appId) {
+	public Application(String Name,String Developer,String Link,String Description, int appId) {
 		name = Name;
 		developer = Developer;
 		link = Link;
 		desc = Description;
-		category = Category;
+		//category = Category;
 		commentList = new ArrayList<Comment>();
 	}
 	
@@ -60,7 +61,11 @@ public class Application {
 	public int getId() {
 		return id;
 	}
-	
+
+	public String getLink() {
+		return link;
+	}
+
 	/**
 	 * @return developer name 
 	 */

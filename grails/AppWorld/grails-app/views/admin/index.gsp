@@ -82,21 +82,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Twitter</td>
-          <td>John Doe</td>
-          <td>https://itunes.apple.com/us/app/twitter/id333903271?mt=8</td>
-          <td>2</td>
-          <td> <button class="btn-danger" id="delete App">delete</button> </td>
-        </tr>
-        <tr>
-          <td>Instagram</td>
-          <td>Mary Moe</td>
-          <td>https://itunes.apple.com/us/app/instagram/id389801252?mt=8</td>
-          <td>3</td>
-          <td> <button class="btn-danger" id="delete App">delete</button> </td>
-        </tr>
-        <tr>
+        <g:each in="${reviewApps}">
+          <tr>
+            <td>${it.getAppName()}</td>
+            <td>${it.getDeveloperName()}</td>
+            <td>${it.getLink()}</td>
+            <td>${it.getVotes()}</td>
+          </tr>
+        </g:each>
           <td>Snapchat</td>
           <td>Julie Dooley</td>
           <td>https://itunes.apple.com/us/app/snapchat/id447188370?mt=8</td>

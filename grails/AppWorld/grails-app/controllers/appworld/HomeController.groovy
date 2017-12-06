@@ -48,6 +48,9 @@ class HomeController {
     }
 
     def submitApp() {
-
+        if(params.appName != "" && params.appDev != "" && params.appLink != "" && params.appDesc != "") {
+            apps.addApp(params.appName, params.appDev, params.appLink, "basic description")
+        }
+        render(view: '/index', model: [username:people.loggedInUsername(),role:people.getLoggedInRole()])
     }
 }
