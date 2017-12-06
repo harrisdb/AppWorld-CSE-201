@@ -2,16 +2,19 @@
   background-image: url("https://cdn-s3.si.com/images/karnazes-trail-running-mountain.jpg");
   background-size: cover;
 }
+
 #jumboApp {
   position: relative;
   top: 60px;
   right: 150px;
 }
+
 #jumboVoted {
   position: relative;
   top: 60px;
   right: 130px;
 }
+
 #mainNav {
   position: relative;
   bottom: 32px;
@@ -26,5 +29,9 @@
 }
 
 #PassContainer {
+  display: none;
+}
+
+#ModContainer {
   display: none;
 }

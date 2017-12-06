@@ -17,6 +17,7 @@
       document.getElementById('Apps Table').style.display = 'none';
       document.getElementById('Users Table').style.display = 'none';
       document.getElementById('User Submissions Table').style.display = 'none';
+      document.getElementById('Moderator Requests Table').style.display = 'none';
 
       var buttonID = document.getElementById(id);
       var tableID = null;
@@ -28,6 +29,8 @@
         tableID = document.getElementById('Users Table');
       } else if (buttonID == document.getElementById('Submissions')) {
         tableID = document.getElementById('User Submissions Table');
+      } else if (buttonID == document.getElementById('Moderator')) {
+        tableID = document.getElementById('Moderator Requests Table');
       }
       tableID.style.display = 'block';
     }
@@ -50,10 +53,19 @@
     <a class="navbar-brand" href="#">Admin</a>
     </div>
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item"><a class="nav-link" href="http://localhost:8080/">Home</a></li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost:8080/"><b>Home</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost:8080/Search"><b>Search</b></a>
+      </li>
+      <li>
+        <a class="nav-link" href="http://localhost:8080/UserSettings"><b>User Settings</b> <span class="sr-only">(current)</span></a>
+      </li>
       <li class="nav-item" id="Apps"><a class="nav-link" href="javascript: showhide('Apps');"> <i>Apps</i> </a></li>
       <li class="nav-item" id="Users"><a class="nav-link" href="javascript: showhide('Users');"> <i>Users</i> </a></li>
       <li class="nav-item" id="Submissions"><a class="nav-link" href="javascript: showhide('Submissions');"> <i>User Submissions</i> </a></li>
+      <li class="nav-item" id="Moderator"><a class="nav-link" href="javascript: showhide('Moderator');"> <i>Moderator Requests</i> </a></li>
     </ul>
     </div>
   </nav>
@@ -142,6 +154,7 @@
       <thead>
         <tr>
           <th>App Name</th>
+          <th>Link</th>
           <th>App Description</th>
           <th>User</th>
           <th>Approve?</th>
@@ -150,30 +163,39 @@
       <tbody>
         <tr>
           <td>Twitter</td>
+          <td>https://itunes.apple.com/us/app/twitter/id333903271?mt=8</td>
           <td>
-            <p>This is a sample description of the app</p>
+            <p>This is a sample description of the app. It is quite long to test table functionality</p>
           </td>
           <td>DoeJ97</td>
           <td style='white-space:nowrap'> <button class="btn-success">Yes</button> <button class="btn-danger">No</button></td>
         </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="container" id="Moderator Requests Table" style="display:none">
+    <table class="table table-hover table-striped">
+      <thead>
         <tr>
-          <td>Instagram</td>
+          <th>Username</th>
+          <th>Votes</th>
+          <th>Message</th>
+          <th>Approve?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>efly000</td>
           <td>
-            <p>hghghghghugdlsnfjmrnsod;filjeosrdjgdklnrgokjtrngkldxjbnghk.dbndngzfesknfusneifhuweioshfusfiuhsiohfos</p>
-            <p>The above text is 100 characters long</p>
-            <p>...</p>
+            50
           </td>
-          <td>MoeM88</td>
+          <td>
+            <p>Please make me a moderator, I have been a very good boy, I would love to delete comments, that would be an amazing thing</p>
+          </td>
           <td style='white-space:nowrap'> <button class="btn-success">Yes</button> <button class="btn-danger">No</button></td>
         </tr>
-        <tr>
-          <td>Viber</td>
-          <td>
-            <p>This is yet another sample description of the app</p>
-          </td>
-          <td>Jeff1000</td>
-          <td style='white-space:nowrap'> <button class="btn-success">Yes</button> <button class="btn-danger">No</button></td>
-        </tr>
+
       </tbody>
     </table>
   </div>

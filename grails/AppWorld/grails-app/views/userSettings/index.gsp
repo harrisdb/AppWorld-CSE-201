@@ -19,6 +19,7 @@
       document.getElementById('FavContainer').style.display = 'none';
       document.getElementById('NameContainer').style.display = 'none';
       document.getElementById('PassContainer').style.display = 'none';
+      document.getElementById('ModContainer').style.display = 'none';
 
       var buttonID = document.getElementById(id);
       var showContainer = null;
@@ -30,6 +31,8 @@
         showContainer = document.getElementById('NameContainer');
       } else if (buttonID == document.getElementById('Pass')) {
         showContainer = document.getElementById('PassContainer');
+      } else if (buttonID == document.getElementById('Mod')) {
+        showContainer = document.getElementById('ModContainer');
       }
       showContainer.style.display = 'block';
     }
@@ -40,7 +43,9 @@
 <body>
   <div class="jumbotron jumbotron-fluid" id="mainJumbo">
     <h1 class="display-3" align="right" id="jumboApp"><font color="white">App World</font></h1>
-    <p class="lead" align="right" id="jumboVoted"><font color="white">Voted #1 Fitness App Catalog in the Universe!</font></p>
+    <p class="lead" align="right" id="jumboVoted">
+      <font color="white">Voted #1 Fitness App Catalog in the Universe!</font>
+    </p>
   </div>
 
   <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse" id="mainNav">
@@ -52,18 +57,46 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="http://localhost:8080/">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="http://localhost:8080/"><b>Home</b> <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:8080/Search"><b>Search</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:8080/Admin"><b>Admin</b></a>
         </li>
         <li id="Fav" class="nav-item">
           <a class="nav-link" href="javascript: showhide('Fav');"> <i>Favorite Categories</i> </a>
         </li>
-        <li id="Name" class="nav-item">
+        <li id="Name" class="nav-item-content-center">
           <a class="nav-link" href="javascript: showhide('Name');"> <i>Change Name</i> </a>
         </li>
-        <li id="Pass" class="nav-item">
+        <li id="Pass" class="nav-item-content-center">
           <a class="nav-link" href="javascript: showhide('Pass');"> <i>Change Password</i> </a>
         </li>
+        <li id="Mod" class="nav-item-content-center">
+          <a class="nav-link" href="javascript: showhide('Mod');"> <i>Become a Moderator</i> </a>
+        </li>
       </ul>
+      <g:if test="${username == 'guest' || username == null}">
+        <form class="form-inline my-2 my-lg-0">
+          <button type="button" class="btn btn-outline-info my-2 my-sm-0" id="loginButton" data-toggle="modal" data-target="#myModal">
+              Login!
+            </button>
+        </form>
+      </g:if>
+      <g:else>
+        <g:form controller="Home" action="logout">
+          <form class="form-inline">
+            <span class="navbar-text">
+                Logged in as ${username}
+              </span>
+            <button type="submit" class="btn btn-outline-danger my-2 my-sm-0" id="loginButton">
+                Logout
+              </button>
+          </form>
+        </g:form>
+      </g:else>
     </div>
   </nav>
 
@@ -148,6 +181,9 @@
     </form>
   </div>
 
+  <div class="container" id="ModContainer">
+    <h3>Your current status: <i>Person/User/Moderator</i></h3>
+  </div>
 
   <!-- jQuery first, then Tether, then Bootstrap JS. -->
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
