@@ -40,19 +40,19 @@
       </li>
 
       <form class="form-inline" style="padding-left:200px">
-        <button type="button" class="btn btn-info my-2 my-sm-0" id="allAppsButton" data-toggle="modal" data-target="#appModal" style="background-color:transparent">
+        <button type="button" class="btn btn-info my-2 my-sm-0" id="allAppsButton" style="background-color:transparent">
           <i>View All Applications</i>
         </button>
       </form>
 
       <form class="form-inline">
-        <button type="button" class="btn btn-info my-2 my-sm-0" id="byVotesButton" data-toggle="modal" data-target="#appModal" style="background-color:transparent">
+        <button type="button" class="btn btn-info my-2 my-sm-0" id="byVotesButton" style="background-color:transparent">
           <i>Sort by Votes</i>
         </button>
       </form>
 
       <form class="form-inline">
-        <button type="button" class="btn btn-info my-2 my-sm-0" id="byCategoryButton" data-toggle="modal" data-target="#appModal" style="background-color:transparent">
+        <button type="button" class="btn btn-info my-2 my-sm-0" id="byCategoryButton" data-toggle="modal" data-target="#categoryModal" style="background-color:transparent">
           <i>Sort by Category</i>
         </button>
       </form>
@@ -81,11 +81,11 @@
   </nav>
 
   <!-- Sort by Category modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="categoryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Login to AppWorld!</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Select Category</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -93,20 +93,61 @@
         <div class="modal-body">
           <g:form controller="Home" action="login">
             <div class="form-group">
-              <label for "loginModalFormUsername">Username</label>
-              <input type="text" class="form-control" id="loginModalFormUsername" placeholder="Username" name="username">
-            </div>
-            <div class="form-group">
-              <label for "loginModalFormPassword">Password</label>
-              <input type="password" class="form-control" id="loginModalFormPassword" placeholder="Password" name="password">
-              <hr class="my-4">
-              <button type="submit" class="btn btn-success">Login</button>
+              <ul>
+                <div class="checkbox">
+                  <label><input type="checkbox">Athletics</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox">Lifting</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox">Meditation</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox">Nutrition</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox">Running</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox">Scheduling</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox">Sleep</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox">Yoga</label>
+                </div>
             </div>
           </g:form>
-          <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="modal" data-target="#signUpModal">New User?</button>
+          <button type="button" class="btn btn-success">Sort</button>
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="container" id="Apps Table">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th>App Name</th>
+          <th>Developer</th>
+          <th>Link</th>
+          <th>Votes</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <g:each in="${reviewApps}">
+          <tr>
+            <td>${it.getAppName()}</td>
+            <td>${it.getDeveloperName()}</td>
+            <td>${it.getLink()}</td>
+            <td>${it.getVotes()}</td>
+          </tr>
+        </g:each>
+      </tbody>
+    </table>
   </div>
 
   <!-- jQuery first, then Tether, then Bootstrap JS. -->
