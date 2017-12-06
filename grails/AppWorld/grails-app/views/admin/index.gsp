@@ -90,11 +90,11 @@
             <td>${it.getVotes()}</td>
           </tr>
         </g:each>
-          <td>Snapchat</td>
-          <td>Julie Dooley</td>
-          <td>https://itunes.apple.com/us/app/snapchat/id447188370?mt=8</td>
-          <td>1</td>
-          <td> <button class="btn-danger" id="delete App">delete</button> </td>
+        <td>Snapchat</td>
+        <td>Julie Dooley</td>
+        <td>https://itunes.apple.com/us/app/snapchat/id447188370?mt=8</td>
+        <td>1</td>
+        <td> <button class="btn-danger" id="delete App">delete</button> </td>
         </tr>
       </tbody>
     </table>
@@ -167,32 +167,7 @@
     </table>
   </div>
 
-  <div class="container" id="Moderator Requests Table" style="display:none">
-    <table class="table table-hover table-striped">
-      <thead>
-        <tr>
-          <th>Username</th>
-          <th>Votes</th>
-          <th>Message</th>
-          <th>Approve?</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>efly000</td>
-          <td>
-            50
-          </td>
-          <td>
-            <p>Please make me a moderator, I have been a very good boy, I would love to delete comments, that would be an amazing thing</p>
-          </td>
-          <td style='white-space:nowrap'> <button class="btn-success">Yes</button> <button class="btn-danger">No</button></td>
-        </tr>
-
-      </tbody>
-    </table>
-  </div>
-
+  s
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
