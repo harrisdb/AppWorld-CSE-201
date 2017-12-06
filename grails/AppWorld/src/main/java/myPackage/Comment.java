@@ -17,16 +17,16 @@ public class Comment {
     private int votes;
     
     
-    private String username;
+    private Person holder;
 
     /**
      * Method to instantiate a comment object
      * @param commentText text that is contained in comment
      */
-    public Comment(String commentText,String cUsername) {
+    public Comment(String commentText,Person people) {
         text = commentText;
         votes = 0;
-        username = cUsername;
+        holder = people;
     }
 
     /**
@@ -59,7 +59,7 @@ public class Comment {
         votes--;
     }
     
-    public String getHolder() {
-    	return username;
+    public Person getHolder() {
+    	return holder;
     }
 }

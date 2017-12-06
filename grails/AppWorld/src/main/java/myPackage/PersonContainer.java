@@ -1,4 +1,6 @@
 package myPackage;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -17,7 +19,7 @@ public class PersonContainer {
          */
         private ArrayList<Person> allPersons = new ArrayList<Person>();
 
-        private Person guest = new Person("guest", "guest", "guest");
+        private Person guest = new User("guest", "guest", "guest");
 
         /**
          * Instantiate an empty PersonContainer
@@ -30,6 +32,7 @@ public class PersonContainer {
             }
             else {
                 signUp("guest", "guest", "guest");
+                adminSignUp("admin", "admin", "pass1234");
             }
         }
 
@@ -40,9 +43,19 @@ public class PersonContainer {
          * @param password password for person
          */
         public void signUp(String name, String username, String password) {
-            Person newPerson = new Person(name, username, password);
+            Person newPerson = new User(name, username, password);
             allPersons.add(newPerson);
             Save();
+        }
+
+        public void adminSignUp(String name, String username, String password) {
+            Person newPerson = new Admin(name, username, password);
+            allPersons.add(newPerson);
+            Save();
+        }
+
+        public String getLoggedInRole() {
+            return allPersons.get(0).getRole();
         }
 
         /**
@@ -57,11 +70,10 @@ public class PersonContainer {
             Person checkPerson;
 
             System.out.println(allPersons.size());
-
             if(allPersons.size() == 0) {
                 return false;
             }
-
+            System.out.println(allPersons.size());
             for (int i = 0; i < allPersons.size(); i++) {
                 checkPerson = allPersons.get(i);
                 if (checkPerson.getUsername().equals(username) && checkPerson.getPassword().equals(password)) {
@@ -85,6 +97,8 @@ public class PersonContainer {
         }
 
         public String loggedInUsername() {
+            System.out.println(allPersons.size());
+            System.out.println(allPersons.get(0).getName());
             return allPersons.get(0).getUsername();
         }
 

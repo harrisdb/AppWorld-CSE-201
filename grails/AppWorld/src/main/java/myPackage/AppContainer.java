@@ -1,4 +1,5 @@
 package myPackage;
+import java.util.Random;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -19,9 +20,34 @@ public class AppContainer {
     	
     }
 
-    public void addApp() {
+    public void addApp(String Name,String Developer,String Link,String Description, String Category) {
+    	Random rand = new Random();
+    	int min = 1;
+    	int max = 1000000;
+    	int random = rand.nextInt((max - min) + 1);
+
+    	Application newApp = new Application(Name, Developer, Link, Description, Category, random);
+    	applicationsToCheck.add(newApp);
 
     }
+
+    public void acceptApp(int id) {
+    	for (int i = 0; i < applicationsToCheck.size(); i++) {
+    		if (id == applicationsToCheck.get(i).getId()) {
+    			Application newApp = applicationsToCheck.get(i);
+    			applicationsToCheck.remove(i);
+    			allApplications.add(newApp);
+			}
+		}
+	}
+
+	public Application getApp(int id) {
+		for (int i = 0; i < allApplications.size(); i++) {
+			if (id == allApplications.get(i).getId()) {
+				return allApplications.get(i);
+			}
+		}
+	}
 
     public ArrayList<Application> searchByCategory(String category) {
     	 ArrayList<Application> thisCategory = new ArrayList<Application>();
@@ -67,7 +93,7 @@ public class AppContainer {
     	FileOutputStream font = null;
     	ObjectOutputStream oos = null;
     	try {
-    		font = new FileOutputStream(" personContainer");
+    		font = new FileOutputStream(" apps.txt");
     		oos = new ObjectOutputStream(font);
     		font.close();
     		oos.close();
@@ -89,7 +115,7 @@ public class AppContainer {
     	ObjectInputStream oi = null;
     	
     	try {
-    		fi = new FileInputStream(new File("myObject.txt"));
+    		fi = new FileInputStream(new File("apps.txt"));
     		oi = new ObjectInputStream(fi);
     		allApplications= (ArrayList<Application>) oi.readObject();
     	}

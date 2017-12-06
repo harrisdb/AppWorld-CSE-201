@@ -1,9 +1,11 @@
 package appworld
 import myPackage.PersonContainer
+import myPackage.AppContainer
 
 class HomeController {
 
     PersonContainer people = new PersonContainer()
+    AppContainer apps = new AppContainer()
 
 
     def login() {
@@ -12,7 +14,7 @@ class HomeController {
             render "login successful"
         }
         else if (people.doesLoginWork(params.username, params.password)){
-            render(view: '/index', model: [username:people.loggedInUsername()])
+            render(view: '/index', model: [username:people.loggedInUsername(),role:people.getLoggedInRole()])
         }
         else {
             render "login failed"
@@ -32,7 +34,7 @@ class HomeController {
 
     def logout() {
         people.logout()
-        render(view: '/index')
+        render(view: '/index', model: [username:people.loggedInUsername(),role:people.getLoggedInRole()])
     }
 
     def guest() {
@@ -41,6 +43,11 @@ class HomeController {
     }
 
     def isUserLoggedIn() {
-        render(view: '/index', model: [username:people.loggedInUsername()])
+        println(people.getLoggedInRole())
+        render(view: '/index', model: [username:people.loggedInUsername(),role:people.getLoggedInRole()])
+    }
+
+    def submitApp() {
+
     }
 }

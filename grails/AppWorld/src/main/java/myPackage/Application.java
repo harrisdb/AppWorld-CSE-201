@@ -16,7 +16,9 @@ public class Application {
 	/**
 	 * the name of the developer of the App.
 	 */
-	private String developerName;
+	private String developer;
+	private String desc;
+	private int id;
 	
 	private int votes;
 	/**
@@ -27,15 +29,16 @@ public class Application {
 	
 	/**
 	 * the main constructor of the Application object.
-	 * @param name
-	 * @param developer
+	 * @param Name
+	 * @param Developer
 	 * @param Link
 	 */
-	public Application(String name,String developer,String Link, int votes) {
-		this.name = name;
-		this.link =Link;
-		this.developerName=developer;
-		this.votes = votes;
+	public Application(String Name,String Developer,String Link,String Description, String Category, int appId) {
+		name = Name;
+		developer = Developer;
+		link = Link;
+		desc = Description;
+		category = Category;
 		commentList = new ArrayList<Comment>();
 	}
 	
@@ -53,24 +56,20 @@ public class Application {
 	public String getAppName() {
 		return name;
 	}
+
+	public int getId() {
+		return id;
+	}
 	
 	/**
 	 * @return developer name 
 	 */
 	public String getDeveloperName() {
-		return developerName;
+		return developer;
 	}
 	
 	/**
-	 * @return all the information we have
-	 */
-	public String information() {
-		return "Application Name:"+name+"\n"+"Developer Name:"+developerName+"\n"+"Link:"+link;
-	}
-	
-	/**
-	 * 
-	 * @param Comment
+	 *
 	 * @return true if successfully delete, false otherwise.
 	 */
 	public boolean deleteComment(Comment a) {

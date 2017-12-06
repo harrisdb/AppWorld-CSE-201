@@ -33,12 +33,16 @@
         <li class="nav-item">
           <a class="nav-link" href="http://localhost:8080/Search"><b>Search</b></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="http://localhost:8080/UserSettings"><b>User Settings</b></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="http://localhost:8080/Admin"><b>Admin</b></a>
-        </li>
+        <g:if test="${username != 'guest'}">
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:8080/UserSettings"><b>User Settings</b></a>
+          </li>
+        </g:if>
+        <g:if test="${role == 'Admin'}">
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:8080/Admin"><b>Admin</b></a>
+          </li>
+        </g:if>
       </ul>
 
       <g:if test="${username == 'guest' || username == null}">
@@ -57,6 +61,11 @@
             <button type="submit" class="btn btn-outline-danger my-2 my-sm-0" id="loginButton">
                 Logout
               </button>
+              <form class="form-inline my-2 my-lg-0">
+                <button type="button" class="btn btn-outline-info my-2 my-sm-0" id="loginButton" data-toggle="modal" data-target="#appModal">
+                    Submit Application
+                  </button>
+              </form>
           </form>
         </g:form>
       </g:else>
@@ -121,6 +130,66 @@
             <div class="form-group">
               <label for="exampleInputEmail1">Repeat Password</label>
               <input type="password" class="form-control" id="signupFormRepeatPassword" placeholder="Repeat Password" name="sPassword2">
+            </div>
+            <hr class="my-4">
+            <button type="submit" class="btn btn-success">Signup!</button>
+          </g:form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="appModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Submit Application Form</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+          <g:form controller="Home" action="submitApp">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Application Name</label>
+              <input type="text" class="form-control" id="signupFormName" placeholder="" name="appName">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Application Developer</label>
+              <input type="text" class="form-control" id="signupFormUsername" placeholder="" name="appDev">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Application Link</label>
+              <input type="password" class="form-control" id="signupFormPassword" aria-describedby="passwordHelp" placeholder="" name="appLink">
+              <small id=passwordHelp class="form-text text-muted">Minimum 8 characters, must contain at least 1 number</small>
+            </div>
+            <div class="form-group">
+              <label for="comment">Description:</label>
+              <textarea class="form-control" rows="5" id="comment" name="appDesc"></textarea>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="catRadio">Athletics</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="catRadio">Lifting</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="catRadio">Meditation</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="catRadio">Nutrition</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="catRadio">Running</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="catRadio">Scheduling</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="catRadio">Sleep</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="catRadio">Yoga</label>
             </div>
             <hr class="my-4">
             <button type="submit" class="btn btn-success">Signup!</button>
