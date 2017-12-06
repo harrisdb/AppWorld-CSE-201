@@ -11,6 +11,7 @@ public class Person implements Serializable{
     private int voteNumber;
     private ArrayList<String> favoriteCategories = new ArrayList<String>();
     private ArrayList<Application> favoriteApplications = new ArrayList<Application>();
+    protected String status;
     
     
     public Person(String pName, String pUsername, String pPassword) {
@@ -20,6 +21,7 @@ public class Person implements Serializable{
         favoriteCategories = new ArrayList<String>();
         favoriteApplications = new ArrayList<Application>();
         voteNumber=0;
+        status = "";
     }
 
     public String getName() {
@@ -44,6 +46,19 @@ public class Person implements Serializable{
         comment.getHolder().beVoted();
     }
 
+    public void voteCommentDown(Comment comment) {
+        comment.decrementVotes();
+        comment.getHolder().beDisvoted();
+    }
+
+    public void voteApp(Application app) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("type your feeling about this application, write good or bad");
+        String feeling = in.nextLine();
+        if(feeling.equals("good")){app.addVote();}
+        else{app.deleteVote();}
+    }
+
     public void addToFavorites(Application app) {
     	favoriteApplications.add(app);
     }
@@ -60,10 +75,17 @@ public class Person implements Serializable{
     	voteNumber++;
     }
     
+    public void beDisvoted() {
+    	voteNumber--;
+    }
+    
     public int getVotedNumber() {
     	return voteNumber;
     }
-
+    
+    public void setVotedNumber(int newOne) {
+    	voteNumber=newOne;
+    }
     public String getRole() {
         return this.getClass().getSimpleName();
     }
