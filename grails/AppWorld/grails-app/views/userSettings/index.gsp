@@ -78,25 +78,6 @@
           <a class="nav-link" href="javascript: showhide('Mod');"> <i>Become a Moderator</i> </a>
         </li>
       </ul>
-      <g:if test="${username == 'guest' || username == null}">
-        <form class="form-inline my-2 my-lg-0">
-          <button type="button" class="btn btn-outline-info my-2 my-sm-0" id="loginButton" data-toggle="modal" data-target="#myModal">
-              Login!
-            </button>
-        </form>
-      </g:if>
-      <g:else>
-        <g:form controller="Home" action="logout">
-          <form class="form-inline">
-            <span class="navbar-text">
-                Logged in as ${username}
-              </span>
-            <button type="submit" class="btn btn-outline-danger my-2 my-sm-0" id="loginButton">
-                Logout
-              </button>
-          </form>
-        </g:form>
-      </g:else>
     </div>
   </nav>
 
@@ -151,16 +132,17 @@
         </div>
         <div class="col-xs-12" style="height:30px;"></div>
       </div>
+    </form>
   </div>
 
   <div class="container" id="PassContainer">
     <h3>Change Password</h3>
     <div class="form-group">
-      <label class="control-label col-sm-2"></label>
-      <div class="col-sm-10">
-        <input type="password" class="form-control" id="pwd" placeholder="Enter current password" name="pwd">
-      </div>
-    </div>
+      <form class="horizontal">
+         <label class="control-label col-sm-2"></label>
+         <div class="col-sm-10">
+           <input type="password" class="form-control" id="pwd" placeholder="Enter current password" name="pwd">
+         </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="pwd"></label>
       <div class="col-sm-10">
@@ -174,10 +156,6 @@
       </div>
     </div>
     <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-success">Save</button>
-      </div>
-    </div>
     </form>
   </div>
 
@@ -185,6 +163,19 @@
     <h3>Your current status: <i>Person/User/Moderator</i></h3>
   </div>
 
+
+
+
+  <form class="form-vertical">
+
+       <div class="col-sm-10">
+         <label class="control-label col-sm-10" for="modMessage" style="padding-top:50px"><i>*A Moderator can delete app comments. Use your power wisely</i></label>
+         <textarea type="text" class="form-control" id="modMessage" placeholder="Write why you should be a moderator" name="modMessage"></textarea>
+       </div>
+       <div class="col-sm-offset-2 col-sm-10">
+         <button type="submit" class="btn btn-success">Save</button>
+       </div>
+     </form>
   <!-- jQuery first, then Tether, then Bootstrap JS. -->
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
