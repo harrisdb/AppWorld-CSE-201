@@ -61,11 +61,11 @@
             <button type="submit" class="btn btn-outline-danger my-2 my-sm-0" id="loginButton">
                 Logout
               </button>
-              <form class="form-inline my-2 my-lg-0">
-                <button type="button" class="btn btn-outline-info my-2 my-sm-0" id="loginButton" data-toggle="modal" data-target="#appModal">
+            <form class="form-inline my-2 my-lg-0">
+              <button type="button" class="btn btn-outline-info my-2 my-sm-0" id="loginButton" data-toggle="modal" data-target="#appModal">
                     Submit Application
                   </button>
-              </form>
+            </form>
           </form>
         </g:form>
       </g:else>
@@ -166,6 +166,14 @@
             <div class="form-group">
               <label for="comment">Description:</label>
               <textarea class="form-control" type="text" rows="5" id="comment" name="appDesc"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Version</label>
+              <input type="text" class="form-control" id="signupFormPassword" placeholder="" name="appLink">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Price</label>
+              <input type="text" class="form-control" id="signupFormPassword" placeholder="" name="appLink">
             </div>
             <div class="radio">
               <label><input type="radio" name="catRadio" value="Athletics">Athletics</label>
