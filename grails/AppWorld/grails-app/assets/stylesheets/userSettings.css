@@ -20,18 +20,18 @@
   bottom: 32px;
 }
 
-#FavContainer {
+/*#FavContainer {
   display: block;
-}
+}*/
 
 #NameContainer {
-  display: none;
+  display: block;
 }
 
 #PassContainer {
   display: none;
 }
 
-#ModContainer {
+/*#ModContainer {
   display: none;
-}
+}*/
