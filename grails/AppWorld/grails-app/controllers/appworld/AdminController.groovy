@@ -13,6 +13,7 @@ class AdminController {
 
     def fillTables() {
         apps.Load()
+        people.Load()
         List<Person> peopleList = []
         ArrayList<Person> peopleArrayList = people.getAllPersons()
         for (int i = 0; i < peopleArrayList.size(); i++) {
@@ -40,5 +41,9 @@ class AdminController {
 
     def test() {
         render(view: '/admin/index', model: [reviewApps:applicationReviewList])
+    }
+
+    def acceptApp() {
+
     }
 }

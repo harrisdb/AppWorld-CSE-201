@@ -40,8 +40,8 @@
 
 <body>
   <div class="jumbotron jumbotron-fluid" id="mainJumbo">
-    <h1 class="display-3" align="right"><font color="white">App World</font></h1>
-    <p class="lead" align="right">
+    <h1 class="display-3" align="right" id="jumboApp"><font color="white">App World</font></h1>
+    <p class="lead" align="right" id="jumboVoted">
       <font color="white">Voted #1 Fitness App Catalog in the Universe!</font>
     </p>
   </div>
@@ -158,9 +158,9 @@
         <g:each in="${reviewApps}">
           <tr>
             <td>${it.getAppName()}</td>
-            <td>${it.getDeveloperName()}</td>
             <td>${it.getLink()}</td>
-            <td>${it.getVotes()}</td>
+            <td>${it.getDesc()}</td>
+            <td>${it.getDeveloperName()}</td>
             <td style='white-space:nowrap'> <button class="btn-success">Yes</button> <button class="btn-danger">No</button></td>
           </tr>
         </g:each>

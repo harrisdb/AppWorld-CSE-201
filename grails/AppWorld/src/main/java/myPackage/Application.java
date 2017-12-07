@@ -19,6 +19,8 @@ public class Application implements Serializable{
 	 */
 	private String developer;
 	private String desc;
+	private String price;
+	private String version;
 	
 	private int votes;
 	/**
@@ -33,12 +35,12 @@ public class Application implements Serializable{
 	 * @param Developer
 	 * @param Link
 	 */
-	public Application(String Name,String Developer,String Link,String Description) {
+	public Application(String Name,String Developer,String Link,String Description, String Category) {
 		name = Name;
 		developer = Developer;
 		link = Link;
 		desc = Description;
-		//category = Category;
+		category = Category;
 		commentList = new ArrayList<Comment>();
 	}
 	
@@ -95,6 +97,10 @@ public class Application implements Serializable{
 	public String getCategory() {
 		// TODO Auto-generated method stub
 		return this.category;
+	}
+
+	public String getDesc() {
+		return desc;
 	}
 	
 }
