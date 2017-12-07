@@ -17,7 +17,7 @@
       document.getElementById('Apps Table').style.display = 'none';
       document.getElementById('Users Table').style.display = 'none';
       document.getElementById('User Submissions Table').style.display = 'none';
-      document.getElementById('Moderator Requests Table').style.display = 'none';
+      // document.getElementById('Moderator Requests Table').style.display = 'none';
 
       var buttonID = document.getElementById(id);
       var tableID = null;
@@ -29,9 +29,9 @@
         tableID = document.getElementById('Users Table');
       } else if (buttonID == document.getElementById('Submissions')) {
         tableID = document.getElementById('User Submissions Table');
-      } else if (buttonID == document.getElementById('Moderator')) {
-        tableID = document.getElementById('Moderator Requests Table');
-      }
+      } // } else if (buttonID == document.getElementById('Moderator')) {
+      //   tableID = document.getElementById('Moderator Requests Table');
+      // }
       tableID.style.display = 'block';
     }
   </script>
@@ -65,7 +65,7 @@
       <li class="nav-item" id="Apps"><a class="nav-link" href="javascript: showhide('Apps');"> <i>Apps</i> </a></li>
       <li class="nav-item" id="Users"><a class="nav-link" href="javascript: showhide('Users');"> <i>Users</i> </a></li>
       <li class="nav-item" id="Submissions"><a class="nav-link" href="javascript: showhide('Submissions');"> <i>User Submissions</i> </a></li>
-      <li class="nav-item" id="Moderator"><a class="nav-link" href="javascript: showhide('Moderator');"> <i>Moderator Requests</i> </a></li>
+      <!-- <li class="nav-item" id="Moderator"><a class="nav-link" href="javascript: showhide('Moderator');"> <i>Moderator Requests</i> </a></li> -->
     </ul>
     </div>
   </nav>
@@ -119,7 +119,10 @@
           <td>John Doe</td>
           <td>50</td>
           <td>User</td>
-          <td> <button class="btn-danger">delete</button> </td>
+          <td style='white-space:nowrap'> <button class="btn-primary">make mod</button>
+            <button class="btn-info">make admin</button>
+            <button class="btn-danger">delete</button>
+          </td>
         </tr>
         <g:each in="${usersList}">
           <tr>
@@ -168,7 +171,7 @@
     </table>
   </div>
 
-  <div class="container" id="Moderator Requests Table" style="display:none">
+  <!-- <div class="container" id="Moderator Requests Table" style="display:none">
     <table class="table table-hover table-striped">
       <thead>
         <tr>
@@ -192,7 +195,7 @@
 
       </tbody>
     </table>
-  </div>
+  </div> -->
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
