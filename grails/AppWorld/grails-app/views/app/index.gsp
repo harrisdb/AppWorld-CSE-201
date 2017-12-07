@@ -135,18 +135,24 @@
     </div>
   </div>
 
-  <img src="https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/67/92/2c/67922c5f-6ab7-5797-bd79-3c5db2e9bfe0/source/1200x630bb.jpg" width="300" height="300" id="image">
-  <img src="https://visualpharm.com/assets/313/Circled%20Up-595b40b85ba036ed117dc927.svg" width="40" height="40" id="image2">
-  <img src="https://visualpharm.com/assets/313/Circled%20Up-595b40b85ba036ed117dc927.svg" width="20" height="20" id="image3">
-  <h1 align="center">Twitter</h1>
-  <h5 align="center">Recommended by 0 users</h3>
-    <h5 align="center">Developed by Twitter Inc.</h3>
-    <p align="center">
-    </p>
-    <hr class="my-4">
-    <h5 align="left">harrisdb</h1>
-    <h5 align="left">0 votes</h5>
-  <h4>twitter is great app</h4>
+  <h1 align="center">${appName}</h1>
+  <h5 align="center">Recommended by ${appVotes} users</h3>
+    <h5 align="center">Developed by ${appDev}</h3>
+    <p align="center">${appDesc}</p>
+
+  <hr class="my-4">
+  <g:if test="${username == 'guest' || username == null}">
+    <h5 align="left">Login to comment!<h5>
+  </g:if>
+  <g:else>
+    <div class="form-group">
+      <label for="comment">Comment:</label>
+      <textarea class="form-control" type="text" rows="5" id="comment" name="appDesc"></textarea>
+      <button type="submit" class="btn btn-success" id="commentButton">Post Comment</button>
+    </div>
+  </g:else>
+
+
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

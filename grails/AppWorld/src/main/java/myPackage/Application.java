@@ -19,7 +19,6 @@ public class Application implements Serializable{
 	 */
 	private String developer;
 	private String desc;
-	private int id;
 	
 	private int votes;
 	/**
@@ -34,7 +33,7 @@ public class Application implements Serializable{
 	 * @param Developer
 	 * @param Link
 	 */
-	public Application(String Name,String Developer,String Link,String Description, int appId) {
+	public Application(String Name,String Developer,String Link,String Description) {
 		name = Name;
 		developer = Developer;
 		link = Link;
@@ -56,10 +55,6 @@ public class Application implements Serializable{
 	 */
 	public String getAppName() {
 		return name;
-	}
-
-	public int getId() {
-		return id;
 	}
 
 	public String getLink() {

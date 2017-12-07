@@ -14,18 +14,24 @@ class AdminController {
     def fillTables() {
         apps.Load()
         List<Person> peopleList = []
-        ArrayList<Person> peopleArrayList = people.getAllPersons();
+        ArrayList<Person> peopleArrayList = people.getAllPersons()
         for (int i = 0; i < peopleArrayList.size(); i++) {
             peopleList.add(peopleArrayList.get(i))
         }
 
         List<Application> applicationReviewList = []
-        ArrayList<Application> applicationsToReview = apps.getApplicationsToCheck();
+        ArrayList<Application> applicationsToReview = apps.getApplicationsToCheck()
         for (int i = 0; i < applicationsToReview.size(); i++) {
             applicationReviewList.add(applicationsToReview.get(i))
         }
 
-        render(view: '/admin/index', model: [reviewApps:applicationReviewList])
+        List<Application> allApplications = []
+        ArrayList<Application> allApps = apps.getAllApplications()
+        for (int i = 0; i < allApps.size(); i++) {
+            allApplications.add(allApps.get(i))
+        }
+
+        render(view: '/admin/index', model: [reviewApps:applicationReviewList,usersList:peopleList,appsList:allApps])
 
 
 

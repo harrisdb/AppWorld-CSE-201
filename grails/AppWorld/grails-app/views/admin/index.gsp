@@ -82,14 +82,16 @@
         </tr>
       </thead>
       <tbody>
-        <g:each in="${reviewApps}">
+        <g:each in="${appsList}">
           <tr>
             <td>${it.getAppName()}</td>
             <td>${it.getDeveloperName()}</td>
             <td>${it.getLink()}</td>
             <td>${it.getVotes()}</td>
+            <td style='white-space:nowrap'> <button class="btn-danger">Delete</button></td>
           </tr>
         </g:each>
+        <tr>
           <td>Snapchat</td>
           <td>Julie Dooley</td>
           <td>https://itunes.apple.com/us/app/snapchat/id447188370?mt=8</td>
@@ -105,8 +107,7 @@
       <thead>
         <tr>
           <th>Username</th>
-          <th>First name</th>
-          <th>Last Name</th>
+          <th>Name</th>
           <th>User Votes</th>
           <th>Status</th>
           <th></th>
@@ -115,29 +116,20 @@
       <tbody>
         <tr>
           <td>DoeJ97</td>
-          <td>John</td>
-          <td>Doe</td>
+          <td>John Doe</td>
           <td>50</td>
           <td>User</td>
           <td> <button class="btn-danger">delete</button> </td>
         </tr>
-        <tr>
-          <tdead>
-            <td>MoeM90</td>
-            <td>Mary</td>
-            <td>Moe</td>
-            <td>10</td>
-            <td>Moderator</td>
-            <td> <button class="btn-danger">delete</button> </td>
-        </tr>
-        <tr>
-          <td>BoJ88</td>
-          <td>Jeff</td>
-          <td>Bo</td>
-          <td>125</td>
-          <td>Admin</td>
-          <td> <button class="btn-danger">delete</button> </td>
-        </tr>
+        <g:each in="${usersList}">
+          <tr>
+            <td>${it.getUsername()}</td>
+            <td>${it.getName()}</td>
+            <td>${it.getVotedNumber()}</td>
+            <td>${it.getRole()}</td>
+            <td style='white-space:nowrap'> <button class="btn-danger">Delete</button></td>
+          </tr>
+        </g:each>
       </tbody>
     </table>
   </div>
@@ -163,6 +155,15 @@
           <td>DoeJ97</td>
           <td style='white-space:nowrap'> <button class="btn-success">Yes</button> <button class="btn-danger">No</button></td>
         </tr>
+        <g:each in="${reviewApps}">
+          <tr>
+            <td>${it.getAppName()}</td>
+            <td>${it.getDeveloperName()}</td>
+            <td>${it.getLink()}</td>
+            <td>${it.getVotes()}</td>
+            <td style='white-space:nowrap'> <button class="btn-success">Yes</button> <button class="btn-danger">No</button></td>
+          </tr>
+        </g:each>
       </tbody>
     </table>
   </div>

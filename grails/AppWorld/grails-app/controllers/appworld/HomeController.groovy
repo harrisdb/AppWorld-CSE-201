@@ -23,9 +23,11 @@ class HomeController {
 
     def signUp() {
         println(params.sUsername)
-        if(params.sPassword == params.sPassword2 && params.sPassword != "" && params.sPassword2 != "" && params.sName != "" && params.sUsername != "" && people.doesLoginWork(params.sUsername)) {
+        if(params.sPassword == params.sPassword2 && params.sPassword != "" && params.sPassword2 != "" && params.sName != "" && params.sUsername != "" && !people.doesUsernameExist(params.sUsername)) {
             people.signUp(params.sName, params.sUsername, params.sPassword)
             render(view: '/index')
+        } else if(people.doesUsernameExist(params.sUsername)) {
+            render "username already exist"
         }
         else {
             render 'passwords dont match'

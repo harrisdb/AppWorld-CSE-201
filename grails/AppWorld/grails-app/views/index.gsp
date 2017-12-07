@@ -161,8 +161,7 @@
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Application Link</label>
-              <input type="text" class="form-control" id="signupFormPassword" aria-describedby="passwordHelp" placeholder="" name="appLink">
-              <small id=passwordHelp class="form-text text-muted">Minimum 8 characters, must contain at least 1 number</small>
+              <input type="text" class="form-control" id="signupFormPassword" placeholder="" name="appLink">
             </div>
             <div class="form-group">
               <label for="comment">Description:</label>

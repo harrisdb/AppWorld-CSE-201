@@ -62,9 +62,6 @@
         <li class="nav-item">
           <a class="nav-link" href="http://localhost:8080/Search"><b>Search</b></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="http://localhost:8080/Admin"><b>Admin</b></a>
-        </li>
         <li id="Fav" class="nav-item">
           <a class="nav-link" href="javascript: showhide('Fav');"> <i>Favorite Categories</i> </a>
         </li>

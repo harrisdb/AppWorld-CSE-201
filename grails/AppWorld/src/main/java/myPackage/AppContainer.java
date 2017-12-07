@@ -28,37 +28,22 @@ public class AppContainer {
     }
 
     public void addApp(String Name,String Developer,String Link,String Description) {
-    	System.out.println("Made it to addApp");
-    	Random rand = new Random();
-    	int min = 1;
-    	int max = 1000000;
-    	int random = rand.nextInt((max - min) + 1);
 
-    	Application newApp = new Application(Name, Developer, Link, Description, random);
+    	Application newApp = new Application(Name, Developer, Link, Description);
     	applicationsToCheck.add(newApp);
     	System.out.println(applicationsToCheck.size());
     	Save();
 
     }
 
-    public void acceptApp(int id) {
-    	for (int i = 0; i < applicationsToCheck.size(); i++) {
-    		if (id == applicationsToCheck.get(i).getId()) {
+    public void acceptApp(String Name, String Developer) {
+    	for(int i =0; i < applicationsToCheck.size(); i++) {
+    		if (applicationsToCheck.get(i).getAppName().equalsIgnoreCase(Name) && applicationsToCheck.get(i).getDeveloperName().equalsIgnoreCase(Developer)) {
     			Application newApp = applicationsToCheck.get(i);
     			applicationsToCheck.remove(i);
     			allApplications.add(newApp);
 			}
 		}
-		Save();
-	}
-
-	public Application getApp(int id) {
-		for (int i = 0; i < allApplications.size(); i++) {
-			if (id == allApplications.get(i).getId()) {
-				return allApplications.get(i);
-			}
-		}
-		return null;
 	}
 
     public ArrayList<Application> searchByCategory(String category) {

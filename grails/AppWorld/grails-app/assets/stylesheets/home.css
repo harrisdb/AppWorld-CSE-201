@@ -9,12 +9,12 @@
 #jumboApp {
   position: relative;
   top: 60px;
-  right: 150px;
+  right: 30px;
 }
 #jumboVoted {
   position: relative;
   top: 60px;
-  right: 130px;
+  right: 15px;
 }
 #appNav {
   position: relative;
@@ -85,4 +85,9 @@
   position: relative;
   right: 260px;
   top: 314px;
+}
+#commentButton {
+  position: relative;
+  top: 10px;
+  left: 10px;
 }
