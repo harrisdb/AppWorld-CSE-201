@@ -57,7 +57,7 @@
         <a class="nav-link" href="http://localhost:8080/"><b>Home</b></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="http://localhost:8080/Search"><b>Search</b></a>
+        <a class="nav-link" href="http://localhost:8080/search"><b>Search</b></a>
       </li>
       <li>
         <a class="nav-link" href="http://localhost:8080/UserSettings"><b>User Settings</b> <span class="sr-only">(current)</span></a>

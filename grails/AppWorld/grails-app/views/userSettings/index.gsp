@@ -62,7 +62,7 @@
           <a class="nav-link" href="http://localhost:8080/"><b>Home</b> <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://localhost:8080/Search"><b>Search</b></a>
+          <a class="nav-link" href="http://localhost:8080/search"><b>Search</b></a>
         </li>
         <li id="Name" class="nav-item-content-center">
           <a class="nav-link" href="javascript: showhide('Name');"> <i>Change Name</i> </a>
