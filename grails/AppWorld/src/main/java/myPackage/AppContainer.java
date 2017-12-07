@@ -1,6 +1,5 @@
 package myPackage;
 
-import java.util.Random;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -10,7 +9,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Scanner;
 public class AppContainer {
 
     private  ArrayList<Application> allApplications = new ArrayList<Application>();
@@ -27,9 +25,9 @@ public class AppContainer {
 		}
     }
 
-    public void addApp(String Name,String Developer,String Link,String Description,String Category) {
+    public void addApp(String Name,String Developer,String Link,String Description,String Category, String Price, String Version) {
 
-    	Application newApp = new Application(Name, Developer, Link, Description, Category);
+    	Application newApp = new Application(Name, Developer, Link, Description, Category, Price, Version);
     	applicationsToCheck.add(newApp);
     	System.out.println(applicationsToCheck.size());
     	Save();

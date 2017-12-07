@@ -52,6 +52,10 @@ public class PersonContainer {
             Save();
         }
 
+        public Person getLoggedInPerson() {
+            return allPersons.get(0);
+        }
+
         public void adminSignUp(String name, String username, String password) {
             Person newPerson = new Admin(name, username, password);
             allPersons.add(newPerson);

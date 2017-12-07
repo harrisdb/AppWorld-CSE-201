@@ -71,6 +71,9 @@
           <a class="nav-link" href="javascript: showhide('Pass');"> <i>Change Password</i> </a>
         </li>
       </ul>
+      <span class="navbar-text">
+        Logged in as ${username}
+      </span>
     </div>
   </nav>
 
@@ -116,7 +119,7 @@
       <div class="form-group">
         <label class="control-label col-sm-2"></label>
         <div class="col-sm-10">
-          <input class="form-control" id="name" placeholder="Enter new name" name="email">
+          <input class="form-control" id="name" placeholder="${fullname}" name="email">
         </div>
       </div>
       <div class="form-group">
@@ -131,27 +134,29 @@
   <div class="container" id="PassContainer">
     <h3>Change Password</h3>
     <div class="form-group">
-      <form class="horizontal">
-        <label class="control-label col-sm-2"></label>
-        <div class="col-sm-10">
-          <input type="password" class="form-control" id="pwd" placeholder="Enter current password" name="pwd">
-        </div>
-        <div class="form-group">
-          <label class="control-label col-sm-2" for="pwd"></label>
+      <g:form action="changePasswords">
+        <form class="horizontal">
+          <label class="control-label col-sm-2"></label>
           <div class="col-sm-10">
-            <input type="password" class="form-control" id="pwd" placeholder="Enter new password" name="pwd">
+            <input type="password" class="form-control" id="pwd" placeholder="Enter current password" name="cPwd">
           </div>
-        </div>
-        <div class="form-group">
-          <label class="control-label col-sm-2" for="pwd"></label>
-          <div class="col-sm-10">
-            <input type="password" class="form-control" id="pwd" placeholder="Re enter new password" name="pwd">
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd"></label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="pwd" placeholder="Enter new password" name="nPwd">
+            </div>
           </div>
-        </div>
-        <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" class="btn btn-success">Save</button>
-        </div>
-      </form>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd"></label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="pwd" placeholder="Re enter new password" name="nPwd2">
+            </div>
+          </div>
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success">Save</button>
+          </div>
+        </form>
+      </g:form>
     </div>
 
     <!-- <div class="container" id="ModContainer">
