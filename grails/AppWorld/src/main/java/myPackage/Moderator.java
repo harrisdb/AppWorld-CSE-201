@@ -3,7 +3,6 @@ public class Moderator extends User{
 
 	public Moderator(String pName, String pUsername, String pPassword) {
 		super(pName, pUsername, pPassword);
-		this.status ="Moderator";
 	}
 	
 	public boolean deleteComment(Application a,Comment c) {

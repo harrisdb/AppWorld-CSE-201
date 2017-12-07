@@ -11,7 +11,6 @@ public class Person implements Serializable{
     private int voteNumber;
     private ArrayList<String> favoriteCategories = new ArrayList<String>();
     private ArrayList<Application> favoriteApplications = new ArrayList<Application>();
-    protected String status;
     
     
     public Person(String pName, String pUsername, String pPassword) {
@@ -21,7 +20,6 @@ public class Person implements Serializable{
         favoriteCategories = new ArrayList<String>();
         favoriteApplications = new ArrayList<Application>();
         voteNumber=0;
-        status = "";
     }
 
     public String getName() {
