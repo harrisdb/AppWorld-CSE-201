@@ -1,11 +1,10 @@
-
+package myPackage;
 public class User extends Person{
 
 
 	
 	public User(String name,String username, String password) {
 		super(name,username,password);
-		this.status ="User";
 	}
 	public void vote(Person p){
 		p.beVoted();

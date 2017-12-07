@@ -1,9 +1,8 @@
-
+package myPackage;
 public class Admin extends Moderator{
 
 	public Admin(String pName, String pUsername, String pPassword) {
 		super(pName, pUsername, pPassword);
-		this.status ="Admin";
 	}
 	
 	

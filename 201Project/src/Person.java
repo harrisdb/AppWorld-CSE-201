@@ -1,7 +1,9 @@
+package myPackage;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Person {
+public class Person implements Serializable{
 
     private String name;
     private String username;
@@ -9,7 +11,6 @@ public class Person {
     private int voteNumber;
     private ArrayList<String> favoriteCategories = new ArrayList<String>();
     private ArrayList<Application> favoriteApplications = new ArrayList<Application>();
-    protected String status;
     
     
     public Person(String pName, String pUsername, String pPassword) {
@@ -19,7 +20,6 @@ public class Person {
         favoriteCategories = new ArrayList<String>();
         favoriteApplications = new ArrayList<Application>();
         voteNumber=0;
-        status = "";
     }
 
     public String getName() {
@@ -84,9 +84,7 @@ public class Person {
     public void setVotedNumber(int newOne) {
     	voteNumber=newOne;
     }
-    
- 
-    public String getStatus() {
-    	return status;
+    public String getRole() {
+        return this.getClass().getSimpleName();
     }
 }
