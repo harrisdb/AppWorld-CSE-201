@@ -136,8 +136,12 @@
   </div>
 
   <h1 align="center">${appName}</h1>
-  <h5 align="center">Recommended by ${appVotes} users</h3>
-    <h5 align="center">Developed by ${appDev}</h3>
+  <h5 align="center">Recommended by ${appVotes} users</h5>
+    <h5 align="center">Developed by ${appDev}</h5>
+    <h5 align="center">${appCategory}</h5>
+    <h5 align="center">${appLink}</h5>
+    <h5 align="center">${appPrice}</h5>
+    <h5 align="center">${appVersion}</h5>
     <p align="center">${appDesc}</p>
 
   <hr class="my-4">

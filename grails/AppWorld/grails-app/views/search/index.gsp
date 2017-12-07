@@ -202,7 +202,8 @@
          <tr>
            <th>App Name</th>
            <th>Developer</th>
-          <th>Link</th>
+           <th>Link</th>
+           <th>Category</th>
            <th>Votes</th>
            <th></th>
         </tr>
@@ -219,6 +220,7 @@
          <td>Snapchat</td>
          <td>Julie Dooley</td>
          <td>https://itunes.apple.com/us/app/snapchat/id447188370?mt=8</td>
+         <td>Meditation</td>
          <td>1</td>
          <td> <button class="btn-info" id="View App">View App</button> </td>
          </tr>
