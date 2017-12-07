@@ -169,11 +169,11 @@
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Version</label>
-              <input type="text" class="form-control" id="signupFormPassword" placeholder="" name="appLink">
+              <input type="text" class="form-control" id="signupFormPassword" placeholder="" name="appVersion">
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Price</label>
-              <input type="text" class="form-control" id="signupFormPassword" placeholder="" name="appLink">
+              <input type="text" class="form-control" id="signupFormPassword" placeholder="" name="appPrice">
             </div>
             <div class="radio">
               <label><input type="radio" name="catRadio" value="Athletics">Athletics</label>

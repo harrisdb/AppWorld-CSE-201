@@ -50,11 +50,6 @@ public class Person implements Serializable{
     }
 
     public void voteApp(Application app) {
-        Scanner in = new Scanner(System.in);
-        System.out.println("type your feeling about this application, write good or bad");
-        String feeling = in.nextLine();
-        if(feeling.equals("good")){app.addVote();}
-        else{app.deleteVote();}
     }
 
     public void addToFavorites(Application app) {
@@ -67,6 +62,10 @@ public class Person implements Serializable{
 
     public void submitApp(Person person, Application app) {
         
+    }
+
+    public void changePassword(String newPassword) {
+        password = newPassword;
     }
     
     public void beVoted() {

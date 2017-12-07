@@ -35,12 +35,14 @@ public class Application implements Serializable{
 	 * @param Developer
 	 * @param Link
 	 */
-	public Application(String Name,String Developer,String Link,String Description, String Category) {
+	public Application(String Name,String Developer,String Link,String Description, String Category,String Price, String Version) {
 		name = Name;
 		developer = Developer;
 		link = Link;
 		desc = Description;
 		category = Category;
+		price = Price;
+		version = Version;
 		commentList = new ArrayList<Comment>();
 	}
 	
@@ -89,10 +91,6 @@ public class Application implements Serializable{
 	public int getVotes() {
 		return votes;
 	}
-	
-	public void deleteVote() {
-		votes--;
-	}
 
 	public String getCategory() {
 		// TODO Auto-generated method stub
@@ -102,5 +100,12 @@ public class Application implements Serializable{
 	public String getDesc() {
 		return desc;
 	}
-	
+
+	public String getPrice() {
+		return price;
+	}
+
+	public String getVers() {
+		return version;
+	}
 }

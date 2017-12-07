@@ -52,8 +52,8 @@ class HomeController {
 
     def submitApp() {
         if(params.appName != "" && params.appDev != "" && params.appLink != "" && params.appDesc != "") {
-            apps.addApp(params.appName, params.appDev, params.appLink, params.appDesc, params.catRadio)
+            apps.addApp(params.appName, params.appDev, params.appLink, params.appDesc, params.catRadio, params.appPrice, params.appVersion)
         }
-        render params.catRadio
+        render(view: '/index', model: [username:people.loggedInUsername(),role:people.getLoggedInRole()])
     }
 }
