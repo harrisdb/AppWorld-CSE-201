@@ -43,6 +43,9 @@
             <a class="nav-link" href="http://localhost:8080/Admin"><b>Admin</b></a>
           </li>
         </g:if>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#helpModal" href=""><i>Help</i></a>
+        </li>
       </ul>
 
       <g:if test="${username == 'guest' || username == null}">
@@ -203,6 +206,46 @@
             <button type="submit" class="btn btn-success">Submit Application</button>
           </g:form>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Help Modal -->
+  <div class="modal fade" id="helpModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 align="center" class="modal-title">How to use AppWorld</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <ul>
+            <li>You may navigate the search, and apps pages.</li>
+            <li>Sort apps on the search page by app votes and categories.</li>
+            <li>Click an app to view the apps page. Here, you will find all info on the app, and will also see comments on the app. You must be logged in to vote, or add comments.</li>
+            <li>Sign up with a your name, unique username, and a password</li>
+            <li>After logged in, you can now comment/vote, and submit new applications</li>
+            <li>Getting votes on your comments earn you user votes</li>
+            <li>Earn enough votes, and you be promoted to moderator status (Approved by admin)</li>
+            <li>Moderators can delete any innappropraite comments</li>
+            <p style="color:rgb(255,0,0)"><b></b>
+            </p>
+            <p style="color:rgb(255,0,0)"><b>* Disclaimer *</b>
+            </p>
+            <li>All Applications are preapproved by an admin before it appears on the site. Admins have the sole power to give and revoke moderator status, as well as delete apps, users, and comments as they see fit. Moderators also may revoke moderator stauts
+              from themselves</li>
+          </ul>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+
       </div>
     </div>
   </div>
