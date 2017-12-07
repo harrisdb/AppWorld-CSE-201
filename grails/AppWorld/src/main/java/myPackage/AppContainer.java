@@ -27,9 +27,9 @@ public class AppContainer {
 		}
     }
 
-    public void addApp(String Name,String Developer,String Link,String Description) {
+    public void addApp(String Name,String Developer,String Link,String Description,String Category) {
 
-    	Application newApp = new Application(Name, Developer, Link, Description);
+    	Application newApp = new Application(Name, Developer, Link, Description, Category);
     	applicationsToCheck.add(newApp);
     	System.out.println(applicationsToCheck.size());
     	Save();

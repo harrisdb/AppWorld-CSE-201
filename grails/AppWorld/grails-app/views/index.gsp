@@ -168,31 +168,31 @@
               <textarea class="form-control" type="text" rows="5" id="comment" name="appDesc"></textarea>
             </div>
             <div class="radio">
-              <label><input type="radio" name="catRadio">Athletics</label>
+              <label><input type="radio" name="catRadio" value="Athletics">Athletics</label>
             </div>
             <div class="radio">
-              <label><input type="radio" name="catRadio">Lifting</label>
+              <label><input type="radio" name="catRadio" value="Lifting">Lifting</label>
             </div>
             <div class="radio">
-              <label><input type="radio" name="catRadio">Meditation</label>
+              <label><input type="radio" name="catRadio" value="Meditation">Meditation</label>
             </div>
             <div class="radio">
-              <label><input type="radio" name="catRadio">Nutrition</label>
+              <label><input type="radio" name="catRadio" value="Nutrition">Nutrition</label>
             </div>
             <div class="radio">
-              <label><input type="radio" name="catRadio">Running</label>
+              <label><input type="radio" name="catRadio" value="Running">Running</label>
             </div>
             <div class="radio">
-              <label><input type="radio" name="catRadio">Scheduling</label>
+              <label><input type="radio" name="catRadio" value="Scheduling">Scheduling</label>
             </div>
             <div class="radio">
-              <label><input type="radio" name="catRadio">Sleep</label>
+              <label><input type="radio" name="catRadio" value="Sleep">Sleep</label>
             </div>
             <div class="radio">
-              <label><input type="radio" name="catRadio">Yoga</label>
+              <label><input type="radio" name="catRadio" value="Yoga">Yoga</label>
             </div>
             <hr class="my-4">
-            <button type="submit" class="btn btn-success">Signup!</button>
+            <button type="submit" class="btn btn-success">Submit Application</button>
           </g:form>
         </div>
       </div>
