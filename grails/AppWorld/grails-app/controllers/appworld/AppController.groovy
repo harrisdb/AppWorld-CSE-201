@@ -1,4 +1,6 @@
 package appworld
+
+import myPackage.AppContainer
 import myPackage.PersonContainer
 
 import grails.validation.ValidationException
@@ -7,7 +9,9 @@ import static org.springframework.http.HttpStatus.*
 class AppController {
 
     PersonContainer people = new PersonContainer()
+    AppContainer apps = new AppContainer()
 
+    def index() { }
 
     def login() {
         people.Load()
@@ -15,18 +19,19 @@ class AppController {
             render "login successful"
         }
         else if (people.doesLoginWork(params.username, params.password)){
-            render(view: '/index', model: [username:people.loggedInUsername()])
+            render(view: '/app/index', model: [username:people.loggedInUsername(),role:people.getLoggedInRole()])
         }
         else {
             render "login failed"
         }
     }
 
+
     def signUp() {
         println(params.sUsername)
-        if(params.sPassword == params.sPassword2 && params.sPassword != "" && params.sPassword2 != "" && params.sName != "" && params.sUsername != "") {
+        if(params.sPassword == params.sPassword2 && params.sPassword != "" && params.sPassword2 != "" && params.sName != "" && params.sUsername != "" && people.doesLoginWork(params.sUsername)) {
             people.signUp(params.sName, params.sUsername, params.sPassword)
-            render(view: '/index')
+            render(view: 'search/index')
         }
         else {
             render 'passwords dont match'
@@ -35,15 +40,16 @@ class AppController {
 
     def logout() {
         people.logout()
-        render(view: '/index')
-    }
-
-    def guest() {
-        flash.message = ("You are not signed in, you are viewing as a guest")
-        redirect(controller: "app", action: "index")
+        render(view: '/app/index', model: [username:people.loggedInUsername(),role:people.getLoggedInRole()])
     }
 
     def isUserLoggedIn() {
-        render(view: '/app', model: [username:people.loggedInUsername()])
+        people.Load()
+        println(people.getLoggedInRole())
+        render(view: '/app/index', model: [username:people.loggedInUsername(),role:people.getLoggedInRole()])
+    }
+
+    def makeComment() {
+
     }
 }

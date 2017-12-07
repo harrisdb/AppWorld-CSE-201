@@ -35,13 +35,16 @@
         <li class="nav-item">
           <a class="nav-link" href="http://localhost:8080/Search"><b>Search</b></a>
         </li>
-        <li>
-          <a class="nav-link" href="http://localhost:8080/UserSettings"><b>User Settings</b> <span class="sr-only">(current)</span></a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="http://localhost:8080/Admin"><b>Admin</b></a>
-        </li>
+        <g:if test="${username != 'guest'}">
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:8080/UserSettings"><b>User Settings</b></a>
+          </li>
+        </g:if>
+        <g:if test="${role == 'Admin'}">
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:8080/Admin"><b>Admin</b></a>
+          </li>
+        </g:if>
       </ul>
       <g:if test="${username == 'guest' || username == null}">
         <form class="form-inline my-2 my-lg-0">
@@ -51,7 +54,7 @@
         </form>
       </g:if>
       <g:else>
-        <g:form controller="Home" action="logout">
+        <g:form action="logout">
           <form class="form-inline">
             <span class="navbar-text">
               Logged in as ${username}
@@ -77,7 +80,7 @@
               </button>
         </div>
         <div class="modal-body">
-          <g:form controller="Home" action="login">
+          <g:form action="login">
             <div class="form-group">
               <label for "loginModalFormUsername">Username</label>
               <input type="text" class="form-control" id="loginModalFormUsername" placeholder="Username" name="username">
@@ -106,7 +109,7 @@
             </button>
         </div>
         <div class="modal-body">
-          <g:form controller="Home" action="signUp">
+          <g:form action="signUp">
             <div class="form-group">
               <label for="exampleInputEmail1">Full Name</label>
               <input type="text" class="form-control" id="signupFormName" placeholder="Full Name" name="sName">

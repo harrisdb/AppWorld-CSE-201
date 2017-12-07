@@ -23,7 +23,7 @@ class HomeController {
 
     def signUp() {
         println(params.sUsername)
-        if(params.sPassword == params.sPassword2 && params.sPassword != "" && params.sPassword2 != "" && params.sName != "" && params.sUsername != "") {
+        if(params.sPassword == params.sPassword2 && params.sPassword != "" && params.sPassword2 != "" && params.sName != "" && params.sUsername != "" && people.doesLoginWork(params.sUsername)) {
             people.signUp(params.sName, params.sUsername, params.sPassword)
             render(view: '/index')
         }
@@ -43,6 +43,7 @@ class HomeController {
     }
 
     def isUserLoggedIn() {
+        people.Load()
         println(people.getLoggedInRole())
         render(view: '/index', model: [username:people.loggedInUsername(),role:people.getLoggedInRole()])
     }

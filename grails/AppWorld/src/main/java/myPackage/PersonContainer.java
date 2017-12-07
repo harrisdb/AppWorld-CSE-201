@@ -58,6 +58,15 @@ public class PersonContainer {
             Save();
         }
 
+        public boolean doesUsernameExist(String username) {
+            for (int i=0; i < allPersons.size(); i++) {
+                if (allPersons.get(i).getUsername().equalsIgnoreCase(username)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public String getLoggedInRole() {
             return allPersons.get(0).getRole();
         }
@@ -82,6 +91,7 @@ public class PersonContainer {
                 checkPerson = allPersons.get(i);
                 if (checkPerson.getUsername().equals(username) && checkPerson.getPassword().equals(password)) {
                     allPersons.set(0, allPersons.get(i));
+                    Save();
                     return true;
                 }
             }
@@ -108,6 +118,7 @@ public class PersonContainer {
 
         public void logout() {
             allPersons.set(0, guest);
+            Save();
         }
 
         public void Save() {

@@ -31,7 +31,7 @@
       <ul class="navbar-nav mr-auto">
 
         <li class="nav-item">
-          <a class="nav-link" href="http://localhost:8080/Search"><b>Search</b></a>
+          <a class="nav-link" href="http://localhost:8080/search"><b>Search</b></a>
         </li>
         <g:if test="${username != 'guest'}">
           <li class="nav-item">
@@ -139,6 +139,7 @@
     </div>
   </div>
 
+  <!-- Submit Application Modal -->
   <div class="modal fade" id="appModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
