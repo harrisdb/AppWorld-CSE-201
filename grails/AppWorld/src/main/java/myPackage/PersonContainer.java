@@ -134,6 +134,15 @@ public class PersonContainer {
             Save();
         }
 
+        public Person findFromname(String name) {
+            for (int i =0; i < allPersons.size(); i++) {
+                if (allPersons.get(i).getUsername().equals(name)) {
+                    return allPersons.get(i);
+                }
+            }
+            return null;
+        }
+
         public void Save() {
             FileOutputStream fout = null;
             ObjectOutputStream oos = null;
@@ -155,6 +164,8 @@ public class PersonContainer {
 
 
         }
+
+
 
         public void userToMod(String username) {
             for (int i=0; i < allPersons.size(); i++) {

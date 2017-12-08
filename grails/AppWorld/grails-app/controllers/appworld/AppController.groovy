@@ -4,6 +4,7 @@ import myPackage.AppContainer
 import myPackage.PersonContainer
 import myPackage.Application
 import myPackage.Comment
+import myPackage.Person
 
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
@@ -90,6 +91,10 @@ class AppController {
         Application appView = apps.getApp(appName, appDev)
         appView.addVoteComment(commentText, commentName)
         apps.Save()
+        people.Load()
+        Person editPerson = people.findFromname(commentName)
+        editPerson.beVoted()
+        people.Save()
         redirect(controller: "search", action: "viewApp", params: [appName: appName, appDev: appDev])
     }
 }
