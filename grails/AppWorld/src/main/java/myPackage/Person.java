@@ -34,36 +34,6 @@ public class Person implements Serializable{
         return username;
     }
 
-    public Comment makeComment(String comment) {
-       Comment a = new Comment(comment,this);
-       return a;
-    }
-
-    public void voteCommentUp(Comment comment) {
-        comment.incrementVotes();
-        comment.getHolder().beVoted();
-    }
-
-    public void voteCommentDown(Comment comment) {
-        comment.decrementVotes();
-        comment.getHolder().beDisvoted();
-    }
-
-    public void voteApp(Application app) {
-    }
-
-    public void addToFavorites(Application app) {
-    	favoriteApplications.add(app);
-    }
-
-    public ArrayList<String> getFavorites(){
-        return favoriteCategories;
-    }
-
-    public void submitApp(Person person, Application app) {
-        
-    }
-
     public void changePassword(String newPassword) {
         password = newPassword;
     }

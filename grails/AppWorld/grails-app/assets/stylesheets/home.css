@@ -91,3 +91,7 @@
   top: 10px;
   left: 10px;
 }
+#upvoteApp {
+  position: relative;
+  left: 48.2%;
+}

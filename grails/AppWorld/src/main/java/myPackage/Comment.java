@@ -1,9 +1,12 @@
 package myPackage;
+
+import java.io.Serializable;
+
 /**
  * @author Devin Harris
  */
 
-public class Comment {
+public class Comment implements Serializable {
 
     /**
      * String that contains text of comment
@@ -17,16 +20,16 @@ public class Comment {
     private int votes;
     
     
-    private Person holder;
+    private String user;
 
     /**
      * Method to instantiate a comment object
      * @param commentText text that is contained in comment
      */
-    public Comment(String commentText,Person people) {
+    public Comment(String commentText,String User) {
         text = commentText;
         votes = 0;
-        holder = people;
+        user = User;
     }
 
     /**
@@ -51,15 +54,9 @@ public class Comment {
         votes++;
     }
 
-    /**
-     * Decrement the votes on a comment, meaning votes = votes - 1
-     * Happens when a user downvotes a comment
-     */
-    public void decrementVotes() {
-        votes--;
-    }
+
     
-    public Person getHolder() {
-    	return holder;
+    public String getUser() {
+    	return user;
     }
 }

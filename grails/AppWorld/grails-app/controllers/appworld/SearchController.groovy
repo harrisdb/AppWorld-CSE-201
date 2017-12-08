@@ -2,6 +2,7 @@ package appworld
 
 import myPackage.Application
 import myPackage.AppContainer
+import myPackage.Comment
 import myPackage.Person
 import myPackage.PersonContainer
 
@@ -19,11 +20,30 @@ class SearchController {
 
     }
 
+    def sortByVotes() {
+        apps.Load()
+
+        render(view: '/search/index', model: [appsList:apps.searchByVotes(),username:people.loggedInUsername(),role:people.getLoggedInRole()])
+    }
+
+    def sortByWord() {
+        apps.Load()
+
+        render(view: '/search/index', model: [appsList:apps.searchByName(params.search),username:people.loggedInUsername(),role:people.getLoggedInRole()])
+    }
+
+    def sortByCategory() {
+        apps.Load()
+
+        render(view: '/search/index', model: [appsList:apps.searchByCategory(params.catRadio),username:people.loggedInUsername(),role:people.getLoggedInRole()])
+    }
+
     def viewApp(String appName, String appDev) {
         apps.Load()
         Application appView = apps.getApp(appName, appDev)
+        ArrayList<Comment> comments = appView.getAllComments()
 
-        render(view: '/app/index', model: [appName:appView.getAppName(),appVotes:appView.getVotes(),appDev:appView.getDeveloperName(),appCategory:appView.getCategory(),appLink:appView.getLink(),appPrice:appView.getPrice(),appVersion:appView.getVers(),appDesc:appView.getDesc(),username:people.loggedInUsername(),role:people.getLoggedInRole()])
+        render(view: '/app/index', model: [commentList:comments,appName:appView.getAppName(),appVotes:appView.getVotes(),appDev:appView.getDeveloperName(),appCategory:appView.getCategory(),appLink:appView.getLink(),appPrice:appView.getPrice(),appVersion:appView.getVers(),appDesc:appView.getDesc(),username:people.loggedInUsername(),role:people.getLoggedInRole()])
     }
 
     def viewUnapprovedApps() {

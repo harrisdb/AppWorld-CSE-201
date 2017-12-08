@@ -58,4 +58,5 @@ class HomeController {
         }
         render(view: '/index', model: [username:people.loggedInUsername(),role:people.getLoggedInRole()])
     }
+
 }

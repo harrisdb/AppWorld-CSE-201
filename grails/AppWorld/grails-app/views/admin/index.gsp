@@ -97,13 +97,6 @@
             </td>
           </tr>
         </g:each>
-        <tr>
-          <td>Snapchat</td>
-          <td>Julie Dooley</td>
-          <td>https://itunes.apple.com/us/app/snapchat/id447188370?mt=8</td>
-          <td>1</td>
-          <td> <button class="btn-danger" id="delete App">delete</button> </td>
-        </tr>
       </tbody>
     </table>
   </div>
@@ -120,16 +113,6 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>DoeJ97</td>
-          <td>John Doe</td>
-          <td>50</td>
-          <td>User</td>
-          <td style='white-space:nowrap'> <button class="btn-primary">make mod</button>
-            <button class="btn-info">make admin</button>
-            <button class="btn-danger">delete</button>
-          </td>
-        </tr>
         <g:each in="${usersList}">
           <tr>
             <g:set var="uName" value="${it.getUsername()}" />
@@ -138,9 +121,28 @@
             <td>${it.getVotedNumber()}</td>
             <td>${it.getRole()}</td>
             <td style='white-space:nowrap'>
-              <g:link action="deleteUser" params="[username: uName]">
-                <button type="button" class="btn-danger">Delete</button>
-              </g:link>
+              <g:if test="${it.getRole() == 'User'}">
+                <g:link action="deleteUser" params="[username: uName]">
+                  <button type="button" class="btn-danger">Delete</button>
+                </g:link>
+                <g:link action="userToMod" params="[username: uName]">
+                  <button type="button" class="btn-info">Make Mod</button>
+                </g:link>
+                <g:link action="toAdmin" params="[username: uName]">
+                  <button type="button" class="btn-warning">Make Admin</button>
+                </g:link>
+              </g:if>
+              <g:if test="${it.getRole() == 'Moderator'}">
+                <g:link action="deleteUser" params="[username: uName]">
+                  <button type="button" class="btn-danger">Delete</button>
+                </g:link>
+                <g:link action="modToUser" params="[username: uName]">
+                  <button type="button" class="btn-info">Revoke Mod</button>
+                </g:link>
+                <g:link action="toAdmin" params="[username: uName]">
+                  <button type="button" class="btn-warning">Make Admin</button>
+                </g:link>
+              </g:if>
             </td>
           </tr>
         </g:each>
@@ -160,20 +162,6 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Twitter</td>
-          <td>https://itunes.apple.com/us/app/twitter/id333903271?mt=8</td>
-          <td>
-            <p>This is a sample description of the app. It is quite long to test table functionality</p>
-          </td>
-          <td>DoeJ97</td>
-          <td style='white-space:nowrap'>
-            <g:link action="acceptApp">
-              <button type="submit" class="btn-success">Yes</button>
-            </g:link>
-            <button class="btn-danger">No</button>
-          </td>
-        </tr>
         <g:each in="${reviewApps}">
           <tr>
             <g:set var="appName" value="${it.getAppName()}" />

@@ -43,23 +43,28 @@
         </li>
       </g:if>
 
-      <form class="form-inline" style="padding-left:200px">
-        <button type="button" class="btn btn-info my-2 my-sm-0" id="allAppsButton" style="background-color:transparent">
-          <i>View All Applications</i>
-        </button>
-      </form>
+      <g:form action="fillTables">
+        <form class="form-inline" style="padding-left:200px">
+          <button type="submit" class="btn btn-info my-2 my-sm-0" id="allAppsButton" style="background-color:transparent">
+            <i>View All Applications</i>
+          </button>
+        </form>
+      </g:form>
+
+      <g:form action="sortByVotes">
+        <form class="form-inline">
+          <button type="submit" class="btn btn-info my-2 my-sm-0" id="byVotesButton" style="background-color:transparent">
+            <i>Sort by Votes</i>
+          </button>
+        </form>
+      </g:form>
 
       <form class="form-inline">
-        <button type="button" class="btn btn-info my-2 my-sm-0" id="byVotesButton" style="background-color:transparent">
-          <i>Sort by Votes</i>
-        </button>
-      </form>
-
-      <form class="form-inline">
-        <button type="button" class="btn btn-info my-2 my-sm-0" id="byCategoryButton" data-toggle="modal" data-target="#appModal" style="background-color:transparent">
+        <button type="button" class="btn btn-info my-2 my-sm-0" id="byCategoryButton" data-toggle="modal" data-target="#categoryModal" style="background-color:transparent">
           <i>Sort by Category</i>
         </button>
       </form>
+
     </ul>
 
     <g:if test="${username == 'guest' || username == null}">
@@ -161,36 +166,36 @@
               </button>
         </div>
         <div class="modal-body">
-          <g:form controller="Home" action="login">
+          <g:form action="sortByCategory">
             <div class="form-group">
-              +              <ul>
-                   <div class="checkbox">
-                     <label><input type="checkbox">Athletics</label>
-                   </div>
-                  <div class="checkbox">
-                     <label><input type="checkbox">Lifting</label>
-                   </div>
-                   <div class="checkbox">
-                     <label><input type="checkbox">Meditation</label>
-                   </div>
-                   <div class="checkbox">
-                     <label><input type="checkbox">Nutrition</label>
-                   </div>
-                   <div class="checkbox">
-                     <label><input type="checkbox">Running</label>
-                  </div>
-                   <div class="checkbox">
-                     <label><input type="checkbox">Scheduling</label>
-                   </div>
-                   <div class="checkbox">
-                     <label><input type="checkbox">Sleep</label>
-                   </div>
-                   <div class="checkbox">
-                     <label><input type="checkbox">Yoga</label>
-                   </div>
+              <div class="radio">
+                <label><input type="radio" name="catRadio" value="Athletics">Athletics</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="catRadio" value="Lifting">Lifting</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="catRadio" value="Meditation">Meditation</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="catRadio" value="Nutrition">Nutrition</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="catRadio" value="Running">Running</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="catRadio" value="Scheduling">Scheduling</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="catRadio" value="Sleep">Sleep</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="catRadio" value="Yoga">Yoga</label>
+              </div>
             </div>
+            <hr class="my-4">
+            <button type="submit" class="btn btn-success">Sort</button>
           </g:form>
-          <button type="button" class="btn btn-success">Sort</button>
         </div>
       </div>
     </div>
@@ -225,13 +230,6 @@
              </td>
            </tr>
          </g:each>
-         <td>Snapchat</td>
-         <td>Julie Dooley</td>
-         <td>https://itunes.apple.com/us/app/snapchat/id447188370?mt=8</td>
-         <td>Meditation</td>
-         <td>1</td>
-         <td> <button class="btn-info" id="View App">View App</button> </td>
-         </tr>
        </tbody>
      </table>
    </div>

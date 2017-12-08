@@ -24,3 +24,11 @@
   position: relative;
   left: 20px;
 }
+#bySearchForm {
+  position: relative;
+  left: 30px;
+}
+#bySearchButton {
+  position: relative;
+  left: 30px;
+}

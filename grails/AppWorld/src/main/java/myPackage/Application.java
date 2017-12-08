@@ -27,7 +27,7 @@ public class Application implements Serializable{
 	 * the list of the comment in this application
 	 */
 	
-	private ArrayList<Comment> commentList;
+	private ArrayList<Comment> commentList = new ArrayList<Comment>();
 	
 	/**
 	 * the main constructor of the Application object.
@@ -43,15 +43,23 @@ public class Application implements Serializable{
 		category = Category;
 		price = Price;
 		version = Version;
-		commentList = new ArrayList<Comment>();
 	}
 	
 	/**
 	 * the add comment method to add a comment.
-	 * @param a
+	 * @param
 	 */
-	public void addComment(Comment a) {
-		commentList.add(a);
+	public void addComment(String Comment, String Name) {
+		Comment newComment = new Comment(Comment, Name);
+		commentList.add(newComment);
+	}
+
+	public void removeComment(String Comment, String Name) {
+		for (int i =0; i < commentList.size(); i++) {
+			if(commentList.get(i).getText().equalsIgnoreCase(Comment) && commentList.get(i).getUser().equals(Name)) {
+				commentList.remove(i);
+			}
+		}
 	}
 	
 	/**
@@ -65,23 +73,16 @@ public class Application implements Serializable{
 		return link;
 	}
 
+	public ArrayList<Comment> getAllComments() {
+		System.out.println(commentList.size());
+		return commentList;
+	}
+
 	/**
 	 * @return developer name 
 	 */
 	public String getDeveloperName() {
 		return developer;
-	}
-	
-	/**
-	 *
-	 * @return true if successfully delete, false otherwise.
-	 */
-	public boolean deleteComment(Comment a) {
-		if(commentList.contains(a)) {
-			commentList.remove(a);
-			return true;
-		}
-		return false;
 	}
 	
 	public void addVote() {
@@ -90,6 +91,14 @@ public class Application implements Serializable{
 	
 	public int getVotes() {
 		return votes;
+	}
+
+	public void addVoteComment(String Comment, String Name) {
+		for (int i =0; i < commentList.size(); i++) {
+			if(commentList.get(i).getText().equalsIgnoreCase(Comment) && commentList.get(i).getUser().equals(Name)) {
+				commentList.get(i).incrementVotes();
+			}
+		}
 	}
 
 	public String getCategory() {

@@ -71,6 +71,11 @@ public class AppContainer {
 		}
 	}
 
+	public void makeComment(Application app, String Username, String Comment) {
+		app.addComment(Comment, Username);
+		Save();
+	}
+
     public ArrayList<Application> searchByCategory(String category) {
     	 ArrayList<Application> thisCategory = new ArrayList<Application>();
     	 for(Application a :allApplications) {
@@ -113,6 +118,8 @@ public class AppContainer {
     }
 
     public void Save() {
+    	System.out.println("we saving");
+
 		FileOutputStream fout = null;
 		ObjectOutputStream oos = null;
 		try {

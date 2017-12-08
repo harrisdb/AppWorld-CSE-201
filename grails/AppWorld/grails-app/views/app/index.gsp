@@ -33,7 +33,7 @@
           <a class="nav-link" href="http://localhost:8080/"><b>Home</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://localhost:8080/Search"><b>Search</b></a>
+          <a class="nav-link" href="http://localhost:8080/search"><b>Search</b></a>
         </li>
         <g:if test="${username != 'guest'}">
           <li class="nav-item">
@@ -143,17 +143,58 @@
     <h5 align="center">${appLink}</h5>
     <h5 align="center">${appPrice}</h5>
     <h5 align="center">${appVersion}</h5>
+    <g:if test="${username != 'guest'}">
+      <g:form controller="app" action="upvote" params="[appName: appName, appDev: devName]">
+        <button type="submit" id="upvoteApp" class="btn-info">Upvote</button></td>
+      </g:form>
+    </g:if>
     <p align="center">${appDesc}</p>
-
   <hr class="my-4">
+  <div class="container" id="Apps Table">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Votes</th>
+          <th>Comment</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <g:each in="${commentList}">
+        <g:set var="commentName" value="${it.getUser()}" />
+        <g:set var="commentText" value="${it.getText()}" />
+          <tr>
+            <td>${it.getUser()}</td>
+            <td>${it.getVotes()}</td>
+            <td>${it.getText()}</td>
+            <td style='white-space:nowrap'>
+              <g:if test="${username != 'guest'}">
+              <g:link controller="app" action="upComment" params="[appName: appName, appDev: devName, commentName: commentName, commentText: commentText]">
+                <button type="button" class="btn-info" id="delete App">Upvote</button>
+              </g:link>
+              </g:if>
+              <g:if test="${role == 'Moderator' || role == 'Admin'}">
+                <g:link controller="app" action="removeComment" params="[appName: appName, appDev: devName, commentName: commentName, commentText: commentText]">
+                  <button type="button" class="btn-danger" id="delete App">Delete</button>
+                </g:link>
+              </g:if>
+            </td>
+          </tr>
+        </g:each>
+      </tbody>
+    </table>
+  </div>
   <g:if test="${username == 'guest' || username == null}">
     <h5 align="left">Login to comment!<h5>
   </g:if>
   <g:else>
     <div class="form-group">
-      <label for="comment">Comment:</label>
-      <textarea class="form-control" type="text" rows="5" id="comment" name="appDesc"></textarea>
-      <button type="submit" class="btn btn-success" id="commentButton">Post Comment</button>
+      <g:form controller="app" action="makeComment"  params="[appName: appName, appDev: devName]">
+        <label for="comment">Comment:</label>
+        <textarea class="form-control" type="text" rows="5" id="comment" name="comment"></textarea>
+        <button type="submit" class="btn btn-success" id="commentButton">Post Comment</button>
+      </g:form>
     </div>
   </g:else>
 

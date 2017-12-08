@@ -160,8 +160,38 @@ public class PersonContainer {
             for (int i=0; i < allPersons.size(); i++) {
                 if (allPersons.get(i).getUsername().equalsIgnoreCase(username)) {
                     Person copy = allPersons.get(i);
+                    allPersons.remove(i);
                     Person newModerator = new Moderator(copy.getName(), copy.getUsername(), copy.getPassword());
-                    allPersons.add(i, newModerator);
+                    allPersons.add(newModerator);
+                    return;
+                }
+            }
+            Save();
+        }
+
+        public void modToUser(String username) {
+            for (int i=0; i < allPersons.size(); i++) {
+                if (allPersons.get(i).getUsername().equalsIgnoreCase(username)) {
+                    Person copy = allPersons.get(i);
+                    allPersons.remove(i);
+                    Person newUser = new User(copy.getName(), copy.getUsername(), copy.getPassword());
+                    allPersons.add(newUser);
+                    Save();
+                    return;
+                }
+            }
+            Save();
+        }
+
+        public void toAdmin(String username) {
+            for (int i=0; i < allPersons.size(); i++) {
+                if (allPersons.get(i).getUsername().equalsIgnoreCase(username)) {
+                    Person copy = allPersons.get(i);
+                    allPersons.remove(i);
+                    Person newAdmin = new Admin(copy.getName(), copy.getUsername(), copy.getPassword());
+                    allPersons.add(newAdmin);
+                    Save();
+                    return;
                 }
             }
             Save();

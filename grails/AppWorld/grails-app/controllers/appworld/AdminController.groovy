@@ -56,15 +56,22 @@ class AdminController {
     }
     def deleteUser(String username) {
         people.removePerson(username)
+        people.Save()
         fillTables()
     }
-    def userToMod() {
-
+    def userToMod(String username) {
+        people.userToMod(username)
+        people.Save()
+        fillTables()
     }
-    def modTouser() {
-
+    def modToUser(String username) {
+        people.modToUser(username)
+        people.Save()
+        fillTables()
     }
-    def promoteToAdmin() {
-
+    def toAdmin(String username) {
+        people.toAdmin(username)
+        people.Save()
+        fillTables()
     }
 }

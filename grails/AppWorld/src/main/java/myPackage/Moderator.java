@@ -6,7 +6,6 @@ public class Moderator extends User{
 	}
 	
 	public boolean deleteComment(Application a,Comment c) {
-		a.deleteComment(c);
 		return true;
 	}
 

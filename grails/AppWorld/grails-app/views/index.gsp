@@ -236,8 +236,7 @@
             </p>
             <p style="color:rgb(255,0,0)"><b>* Disclaimer *</b>
             </p>
-            <li>All Applications are preapproved by an admin before it appears on the site. Admins have the sole power to give and revoke moderator status, as well as delete apps, users, and comments as they see fit. Moderators also may revoke moderator status
-              from themselves</li>
+            <li>All Applications are preapproved by an admin before it appears on the site. Admins have the sole power to give and revoke moderator status, as well as delete apps, users, and comments as they see fit.</li>
           </ul>
         </div>
 

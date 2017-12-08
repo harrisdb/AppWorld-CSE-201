@@ -2,6 +2,8 @@ package appworld
 
 import myPackage.AppContainer
 import myPackage.PersonContainer
+import myPackage.Application
+import myPackage.Comment
 
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
@@ -51,7 +53,43 @@ class AppController {
         render(view: '/app/index', model: [username:people.loggedInUsername(),role:people.getLoggedInRole()])
     }
 
-    def makeComment() {
+    def makeComment(String appName, String appDev) {
 
+
+        if (params.comment != "") {
+            apps.Load()
+            Application appView = apps.getApp(appName, appDev)
+            appView.addComment(params.comment, people.loggedInUsername())
+            apps.Save()
+            redirect(controller: "search", action: "viewApp", params: [appName: appName, appDev: appDev])
+        }
+        else {
+            render "Comment form was empty"
+        }
+    }
+
+    def upvote(String appName, String appDev) {
+        apps.Load()
+        Application appView = apps.getApp(appName, appDev)
+        appView.addVote()
+        apps.Save()
+        redirect(controller: "search", action: "viewApp", params: [appName: appName, appDev: appDev])
+    }
+
+    def removeComment(String appName, String appDev, String commentName, String commentText) {
+        apps.Load()
+        Application appView = apps.getApp(appName, appDev)
+        appView.removeComment(commentText, commentName)
+        apps.Save()
+        redirect(controller: "search", action: "viewApp", params: [appName: appName, appDev: appDev])
+    }
+
+
+    def upComment(String appName, String appDev, String commentName, String commentText) {
+        apps.Load()
+        Application appView = apps.getApp(appName, appDev)
+        appView.addVoteComment(commentText, commentName)
+        apps.Save()
+        redirect(controller: "search", action: "viewApp", params: [appName: appName, appDev: appDev])
     }
 }
