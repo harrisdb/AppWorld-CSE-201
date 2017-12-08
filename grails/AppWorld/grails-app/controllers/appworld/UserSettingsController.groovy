@@ -31,4 +31,16 @@ class UserSettingsController {
         render(view: '/UserSettings/index', model: [username:people.loggedInUsername(),fullname:people.getLoggedInPerson().getName()])
     }
 
+    def changeName() {
+        people.Load()
+        if(params.newName == "") {
+            render "You didn't fill in the form"
+        }
+        else {
+            people.getLoggedInPerson().changeName(params.newName)
+        }
+        people.Save()
+        render(view: '/UserSettings/index', model: [username:people.loggedInUsername(),fullname:people.getLoggedInPerson().getName()])
+    }
+
 }

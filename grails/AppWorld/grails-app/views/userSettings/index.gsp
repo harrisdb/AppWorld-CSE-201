@@ -115,20 +115,22 @@
 
   <div class="container" id="NameContainer">
     <h3>Change Name</h3>
-    <form class="form-horizontal">
-      <div class="form-group">
-        <label class="control-label col-sm-2"></label>
-        <div class="col-sm-10">
-          <input class="form-control" id="name" placeholder="${fullname}" name="email">
+    <g:form action="changeName">
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label class="control-label col-sm-2"></label>
+          <div class="col-sm-10">
+            <input class="form-control" id="name" placeholder="${fullname}" name="newName">
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" class="btn btn-success">Save</button>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success">Save</button>
+          </div>
+          <div class="col-xs-12" style="height:30px;"></div>
         </div>
-        <div class="col-xs-12" style="height:30px;"></div>
-      </div>
-    </form>
+      </form>
+    </g:form>
   </div>
 
   <div class="container" id="PassContainer">

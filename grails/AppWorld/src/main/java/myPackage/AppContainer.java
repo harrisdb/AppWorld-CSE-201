@@ -1,21 +1,21 @@
 package myPackage;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.ArrayList;
 import java.util.Arrays;
+
 public class AppContainer {
 
     private  ArrayList<Application> allApplications = new ArrayList<Application>();
     private ArrayList<Application> applicationsToCheck = new ArrayList<Application>();
-    private String[] categories = new String[] {"Athletics", "Lifting", "Meditation", "Nutrition", "Running", "Scheduling", "Sleep", "Yoga"};
 
-    public AppContainer() throws FileNotFoundException {
+    public AppContainer() {
 		File tmpDir = new File("apps.txt");
 		boolean exists = tmpDir.exists();
 		File tmpDir2 = new File("appReview.txt");
@@ -25,8 +25,16 @@ public class AppContainer {
 		}
     }
 
-    public void addApp(String Name,String Developer,String Link,String Description,String Category, String Price, String Version) {
+    public Application getApp(String Name,String Developer) {
+		for(int i =0; i < allApplications.size(); i++) {
+			if (allApplications.get(i).getAppName().equalsIgnoreCase(Name) && allApplications.get(i).getDeveloperName().equalsIgnoreCase(Developer)) {
+				return allApplications.get(i);
+			}
+		}
+		return allApplications.get(0);
+	}
 
+    public void addApp(String Name,String Developer,String Link,String Description,String Category, String Price, String Version) {
     	Application newApp = new Application(Name, Developer, Link, Description, Category, Price, Version);
     	applicationsToCheck.add(newApp);
     	System.out.println(applicationsToCheck.size());
@@ -40,6 +48,25 @@ public class AppContainer {
     			Application newApp = applicationsToCheck.get(i);
     			applicationsToCheck.remove(i);
     			allApplications.add(newApp);
+    			Save();
+			}
+		}
+	}
+
+	public void denyApp(String Name, String Developer) {
+		for(int i =0; i < applicationsToCheck.size(); i++) {
+			if (applicationsToCheck.get(i).getAppName().equalsIgnoreCase(Name) && applicationsToCheck.get(i).getDeveloperName().equalsIgnoreCase(Developer)) {
+				applicationsToCheck.remove(i);
+				Save();
+			}
+		}
+	}
+
+	public void removeApp(String Name, String Developer) {
+		for(int i =0; i < allApplications.size(); i++) {
+			if (allApplications.get(i).getAppName().equalsIgnoreCase(Name) && allApplications.get(i).getDeveloperName().equalsIgnoreCase(Developer)) {
+				allApplications.remove(i);
+				Save();
 			}
 		}
 	}
@@ -102,10 +129,12 @@ public class AppContainer {
 			e.printStackTrace();
 		}
 
+		FileOutputStream fout2 = null;
+		ObjectOutputStream oos2 = null;
 		try {
-			fout = new FileOutputStream("appReview.txt");
-			oos = new ObjectOutputStream(fout);
-			oos.writeObject(applicationsToCheck);
+			fout2 = new FileOutputStream("appReview.txt");
+			oos2 = new ObjectOutputStream(fout2);
+			oos2.writeObject(applicationsToCheck);
 			fout.close();
 			oos.close();
 		}
@@ -137,10 +166,12 @@ public class AppContainer {
 			e.printStackTrace();
 		}
 
+		FileInputStream fi2 = null;
+		ObjectInputStream oi2 = null;
 		try {
-			fi = new FileInputStream(new File("appReview.txt"));
-			oi = new ObjectInputStream(fi);
-			applicationsToCheck = (ArrayList<Application>) oi.readObject();
+			fi2 = new FileInputStream(new File("appReview.txt"));
+			oi2 = new ObjectInputStream(fi2);
+			applicationsToCheck = (ArrayList<Application>) oi2.readObject();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

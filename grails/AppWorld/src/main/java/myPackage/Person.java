@@ -67,6 +67,10 @@ public class Person implements Serializable{
     public void changePassword(String newPassword) {
         password = newPassword;
     }
+
+    public void changeName(String newName) {
+        name = newName;
+    }
     
     public void beVoted() {
     	voteNumber++;

@@ -2,6 +2,7 @@ package appworld
 
 import myPackage.Application
 import myPackage.AppContainer
+import myPackage.Person
 import myPackage.PersonContainer
 
 class SearchController {
@@ -11,12 +12,18 @@ class SearchController {
 
     def index() { }
 
-    def allApps() {
-        List<Application> allApplications = []
-        ArrayList<Application> allApps = apps.getAllApplications()
-        for (int i = 0; i < allApps.size(); i++) {
-            allApplications.add(allApps.get(i))
-        }
+    def fillTables() {
+        apps.Load()
+
+        render(view: '/search/index', model: [appsList:apps.getAllApplications(),username:people.loggedInUsername(),role:people.getLoggedInRole()])
+
+    }
+
+    def viewApp(String appName, String appDev) {
+        apps.Load()
+        Application appView = apps.getApp(appName, appDev)
+
+        render(view: '/app/index', model: [appName:appView.getAppName(),appVotes:appView.getVotes(),appDev:appView.getDeveloperName(),appCategory:appView.getCategory(),appLink:appView.getLink(),appPrice:appView.getPrice(),appVersion:appView.getVers(),appDesc:appView.getDesc(),username:people.loggedInUsername(),role:people.getLoggedInRole()])
     }
 
     def viewUnapprovedApps() {

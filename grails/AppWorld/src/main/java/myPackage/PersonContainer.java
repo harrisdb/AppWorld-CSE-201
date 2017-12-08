@@ -52,6 +52,15 @@ public class PersonContainer {
             Save();
         }
 
+        public void removePerson(String username) {
+            for (int i=0; i < allPersons.size(); i++) {
+                if (allPersons.get(i).getUsername().equalsIgnoreCase(username)) {
+                    allPersons.remove(i);
+                }
+            }
+            Save();
+        }
+
         public Person getLoggedInPerson() {
             return allPersons.get(0);
         }
@@ -145,6 +154,17 @@ public class PersonContainer {
 
 
 
+        }
+
+        public void userToMod(String username) {
+            for (int i=0; i < allPersons.size(); i++) {
+                if (allPersons.get(i).getUsername().equalsIgnoreCase(username)) {
+                    Person copy = allPersons.get(i);
+                    Person newModerator = new Moderator(copy.getName(), copy.getUsername(), copy.getPassword());
+                    allPersons.add(i, newModerator);
+                }
+            }
+            Save();
         }
 
         public void Load() {

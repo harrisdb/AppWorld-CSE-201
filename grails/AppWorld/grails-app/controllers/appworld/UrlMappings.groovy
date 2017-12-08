@@ -9,7 +9,7 @@ class UrlMappings {
             }
         }
         "/app"(controller:"app", action:"isUserLoggedIn")
-        "/search"(controller:"search", action:"isUserLoggedIn")
+        "/search"(controller:"search", action:"fillTables")
         "/UserSettings"(controller:"UserSettings", action:"landing")
         "/Admin"(controller:"admin", action:"fillTables")
         "/"(controller:"home", action:"isUserLoggedIn")

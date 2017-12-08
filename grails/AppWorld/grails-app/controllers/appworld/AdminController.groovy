@@ -32,18 +32,39 @@ class AdminController {
             allApplications.add(allApps.get(i))
         }
 
-        render(view: '/admin/index', model: [reviewApps:applicationReviewList,usersList:peopleList,appsList:allApps])
+        render(view: '/admin/index', model: [reviewApps:apps.getApplicationsToCheck(),usersList:people.getAllPersons(),appsList:apps.getAllApplications()])
 
 
 
 
     }
 
-    def test() {
-        render(view: '/admin/index', model: [reviewApps:applicationReviewList])
+    def acceptApp(String appName, String appDev) {
+        apps.acceptApp(params.appName, params.appDev)
+        apps.Save()
+        fillTables()
     }
+    def denyApp(String appName, String appDev) {
+        apps.denyApp(appName, appDev)
+        apps.Save()
+        fillTables()
+    }
+    def deleteApp(String appName, String appDev) {
+        apps.removeApp(appName, appDev)
+        apps.Save()
+        fillTables()
+    }
+    def deleteUser(String username) {
+        people.removePerson(username)
+        fillTables()
+    }
+    def userToMod() {
 
-    def acceptApp() {
+    }
+    def modTouser() {
+
+    }
+    def promoteToAdmin() {
 
     }
 }

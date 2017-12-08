@@ -108,4 +108,5 @@ public class Application implements Serializable{
 	public String getVers() {
 		return version;
 	}
+
 }

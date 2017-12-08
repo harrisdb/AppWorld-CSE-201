@@ -209,12 +209,20 @@
         </tr>
        </thead>
        <tbody>
-        <g:each in="${reviewApps}">
+         <g:each in="${appsList}">
            <tr>
+             <g:set var="appName" value="${it.getAppName()}" />
              <td>${it.getAppName()}</td>
              <td>${it.getDeveloperName()}</td>
+             <g:set var="devName" value="${it.getDeveloperName()}" />
              <td>${it.getLink()}</td>
-           <td>${it.getVotes()}</td>
+             <td>${it.getCategory()}</td>
+             <td>${it.getVotes()}</td>
+             <td style='white-space:nowrap'>
+               <g:link action="viewApp" params="[appName: appName, appDev: devName]">
+                <button type="button" class="btn-info">View App</button></td>
+              </g:link>
+             </td>
            </tr>
          </g:each>
          <td>Snapchat</td>

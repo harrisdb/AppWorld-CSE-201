@@ -134,7 +134,8 @@
       </div>
     </div>
   </div>
-
+  <g:set var="appName" value="${appName}" />
+  <g:set var="devName" value="${appDev}" />
   <h1 align="center">${appName}</h1>
   <h5 align="center">Recommended by ${appVotes} users</h5>
     <h5 align="center">Developed by ${appDev}</h5>

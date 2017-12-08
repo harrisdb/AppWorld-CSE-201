@@ -84,11 +84,17 @@
       <tbody>
         <g:each in="${appsList}">
           <tr>
+            <g:set var="appName" value="${it.getAppName()}" />
             <td>${it.getAppName()}</td>
             <td>${it.getDeveloperName()}</td>
             <td>${it.getLink()}</td>
+            <g:set var="devName" value="${it.getDeveloperName()}" />
             <td>${it.getVotes()}</td>
-            <td style='white-space:nowrap'> <button class="btn-danger">Delete</button></td>
+            <td style='white-space:nowrap'>
+              <g:link action="deleteApp" params="[appName: appName, appDev: devName]">
+                <button type="button" class="btn-danger">Delete</button></td>
+              </g:link>
+            </td>
           </tr>
         </g:each>
         <tr>
@@ -126,11 +132,16 @@
         </tr>
         <g:each in="${usersList}">
           <tr>
+            <g:set var="uName" value="${it.getUsername()}" />
             <td>${it.getUsername()}</td>
             <td>${it.getName()}</td>
             <td>${it.getVotedNumber()}</td>
             <td>${it.getRole()}</td>
-            <td style='white-space:nowrap'> <button class="btn-danger">Delete</button></td>
+            <td style='white-space:nowrap'>
+              <g:link action="deleteUser" params="[username: uName]">
+                <button type="button" class="btn-danger">Delete</button>
+              </g:link>
+            </td>
           </tr>
         </g:each>
       </tbody>
@@ -156,15 +167,29 @@
             <p>This is a sample description of the app. It is quite long to test table functionality</p>
           </td>
           <td>DoeJ97</td>
-          <td style='white-space:nowrap'> <button class="btn-success">Yes</button> <button class="btn-danger">No</button></td>
+          <td style='white-space:nowrap'>
+            <g:link action="acceptApp">
+              <button type="submit" class="btn-success">Yes</button>
+            </g:link>
+            <button class="btn-danger">No</button>
+          </td>
         </tr>
         <g:each in="${reviewApps}">
           <tr>
-            <td>${it.getAppName()}</td>
-            <td>${it.getLink()}</td>
-            <td>${it.getDesc()}</td>
+            <g:set var="appName" value="${it.getAppName()}" />
+            <td >${appName}</td>
+            <td >${it.getLink()}</td>
+            <td >${it.getDesc()}</td>
+            <g:set var="devName" value="${it.getDeveloperName()}" />
             <td>${it.getDeveloperName()}</td>
-            <td style='white-space:nowrap'> <button class="btn-success">Yes</button> <button class="btn-danger">No</button></td>
+            <td style='white-space:nowrap'>
+              <g:link action="acceptApp" params="[appName: appName, appDev: devName]">
+                <button type="button" class="btn-success">Yes</button>
+              </g:link>
+              <g:link action="denyApp" params="[appName: appName, appDev: devName]">
+                <button type="button" class="btn-danger">No</button></td>
+              </g:link>
+            </td>
           </tr>
         </g:each>
       </tbody>
